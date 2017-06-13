@@ -1,0 +1,1293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\newtrendstech\StubHubScraper\deploy</_PublishTargetUrl>
+    <LastUsedBuildConfiguration>Debug</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>07/22/2015 01:40:58</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>07/24/2015 10:24:17</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>07/24/2015 10:24:16</publishTime>
+    </File>
+    <File Include="bin/Autofac.dll">
+      <publishTime>07/22/2015 01:40:20</publishTime>
+    </File>
+    <File Include="bin/Autofac.Integration.Mvc.dll">
+      <publishTime>07/22/2015 01:40:20</publishTime>
+    </File>
+    <File Include="bin/Autofac.Integration.WebApi.dll">
+      <publishTime>07/22/2015 01:40:20</publishTime>
+    </File>
+    <File Include="bin/AutoMapper.dll">
+      <publishTime>07/22/2015 01:40:21</publishTime>
+    </File>
+    <File Include="bin/AutoMapper.Net4.dll">
+      <publishTime>07/22/2015 01:40:21</publishTime>
+    </File>
+    <File Include="bin/AutoMapper.Net4.pdb">
+      <publishTime>07/10/2015 17:32:59</publishTime>
+    </File>
+    <File Include="bin/AutoMapper.pdb">
+      <publishTime>07/10/2015 17:32:59</publishTime>
+    </File>
+    <File Include="bin/de/FluentValidation.resources.dll">
+      <publishTime>07/10/2015 19:36:13</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.Data.Edm.resources.dll">
+      <publishTime>07/10/2015 10:39:51</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.Data.OData.resources.dll">
+      <publishTime>07/10/2015 10:39:52</publishTime>
+    </File>
+    <File Include="bin/de/System.Spatial.resources.dll">
+      <publishTime>07/10/2015 10:39:50</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.AspNet.dll">
+      <publishTime>07/22/2015 01:40:21</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.Core.dll">
+      <publishTime>07/22/2015 01:40:21</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth.Consumer.dll">
+      <publishTime>07/22/2015 01:40:21</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth.dll">
+      <publishTime>07/22/2015 01:40:22</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenId.dll">
+      <publishTime>07/22/2015 01:40:22</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenId.RelyingParty.dll">
+      <publishTime>07/22/2015 01:40:22</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>07/22/2015 01:40:10</publishTime>
+    </File>
+    <File Include="bin/es/FluentValidation.resources.dll">
+      <publishTime>07/10/2015 19:36:13</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.Data.Edm.resources.dll">
+      <publishTime>07/10/2015 10:39:51</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.Data.OData.resources.dll">
+      <publishTime>07/10/2015 10:39:52</publishTime>
+    </File>
+    <File Include="bin/es/System.Spatial.resources.dll">
+      <publishTime>07/10/2015 10:39:50</publishTime>
+    </File>
+    <File Include="bin/FluentValidation.dll">
+      <publishTime>07/22/2015 00:12:46</publishTime>
+    </File>
+    <File Include="bin/FluentValidation.Mvc.dll">
+      <publishTime>07/22/2015 00:12:51</publishTime>
+    </File>
+    <File Include="bin/FluentValidation.Mvc.pdb">
+      <publishTime>07/10/2015 19:36:13</publishTime>
+    </File>
+    <File Include="bin/FluentValidation.pdb">
+      <publishTime>07/10/2015 19:36:13</publishTime>
+    </File>
+    <File Include="bin/fr/FluentValidation.resources.dll">
+      <publishTime>07/10/2015 19:36:13</publishTime>
+    </File>
+    <File Include="bin/fr/Microsoft.Data.Edm.resources.dll">
+      <publishTime>07/10/2015 10:39:51</publishTime>
+    </File>
+    <File Include="bin/fr/Microsoft.Data.OData.resources.dll">
+      <publishTime>07/10/2015 10:39:52</publishTime>
+    </File>
+    <File Include="bin/fr/System.Spatial.resources.dll">
+      <publishTime>07/10/2015 10:39:50</publishTime>
+    </File>
+    <File Include="bin/HtmlAgilityPack.dll">
+      <publishTime>07/22/2015 01:40:20</publishTime>
+    </File>
+    <File Include="bin/it/FluentValidation.resources.dll">
+      <publishTime>07/10/2015 19:36:13</publishTime>
+    </File>
+    <File Include="bin/it/Microsoft.Data.Edm.resources.dll">
+      <publishTime>07/10/2015 10:39:51</publishTime>
+    </File>
+    <File Include="bin/it/Microsoft.Data.OData.resources.dll">
+      <publishTime>07/10/2015 10:39:52</publishTime>
+    </File>
+    <File Include="bin/it/System.Spatial.resources.dll">
+      <publishTime>07/10/2015 10:39:50</publishTime>
+    </File>
+    <File Include="bin/ja/Microsoft.Data.Edm.resources.dll">
+      <publishTime>07/10/2015 10:39:51</publishTime>
+    </File>
+    <File Include="bin/ja/Microsoft.Data.OData.resources.dll">
+      <publishTime>07/10/2015 10:39:52</publishTime>
+    </File>
+    <File Include="bin/ja/System.Spatial.resources.dll">
+      <publishTime>07/10/2015 10:39:50</publishTime>
+    </File>
+    <File Include="bin/ko/FluentValidation.resources.dll">
+      <publishTime>07/10/2015 19:36:13</publishTime>
+    </File>
+    <File Include="bin/ko/Microsoft.Data.Edm.resources.dll">
+      <publishTime>07/10/2015 10:39:51</publishTime>
+    </File>
+    <File Include="bin/ko/Microsoft.Data.OData.resources.dll">
+      <publishTime>07/10/2015 10:39:52</publishTime>
+    </File>
+    <File Include="bin/ko/System.Spatial.resources.dll">
+      <publishTime>07/10/2015 10:39:50</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Data.Edm.dll">
+      <publishTime>07/22/2015 01:40:53</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Data.OData.dll">
+      <publishTime>07/22/2015 01:40:53</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>03/08/2012 08:20:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Mvc.FixedDisplayModes.dll">
+      <publishTime>07/22/2015 01:40:23</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.WebPages.OAuth.dll">
+      <publishTime>07/10/2012 21:53:02</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>07/22/2015 01:40:58</publishTime>
+    </File>
+    <File Include="bin/nl/FluentValidation.resources.dll">
+      <publishTime>07/10/2015 19:36:13</publishTime>
+    </File>
+    <File Include="bin/pl/FluentValidation.resources.dll">
+      <publishTime>07/10/2015 19:36:13</publishTime>
+    </File>
+    <File Include="bin/pt/FluentValidation.resources.dll">
+      <publishTime>07/10/2015 19:36:13</publishTime>
+    </File>
+    <File Include="bin/ru/FluentValidation.resources.dll">
+      <publishTime>07/10/2015 19:36:13</publishTime>
+    </File>
+    <File Include="bin/ru/Microsoft.Data.Edm.resources.dll">
+      <publishTime>07/10/2015 10:39:51</publishTime>
+    </File>
+    <File Include="bin/ru/Microsoft.Data.OData.resources.dll">
+      <publishTime>07/10/2015 10:39:52</publishTime>
+    </File>
+    <File Include="bin/ru/System.Spatial.resources.dll">
+      <publishTime>07/10/2015 10:39:51</publishTime>
+    </File>
+    <File Include="bin/ScrapySharp.Core.dll">
+      <publishTime>07/22/2015 01:40:20</publishTime>
+    </File>
+    <File Include="bin/ScrapySharp.dll">
+      <publishTime>07/22/2015 01:40:20</publishTime>
+    </File>
+    <File Include="bin/StubHubScraper.Core.dll">
+      <publishTime>07/24/2015 04:37:03</publishTime>
+    </File>
+    <File Include="bin/StubHubScraper.Core.pdb">
+      <publishTime>07/24/2015 04:37:03</publishTime>
+    </File>
+    <File Include="bin/StubHubScraper.Data.dll">
+      <publishTime>07/24/2015 04:37:04</publishTime>
+    </File>
+    <File Include="bin/StubHubScraper.Data.pdb">
+      <publishTime>07/24/2015 04:37:04</publishTime>
+    </File>
+    <File Include="bin/StubHubScraper.Framework.dll">
+      <publishTime>07/24/2015 04:37:04</publishTime>
+    </File>
+    <File Include="bin/StubHubScraper.Framework.pdb">
+      <publishTime>07/24/2015 04:37:04</publishTime>
+    </File>
+    <File Include="bin/StubHubScraper.Services.dll">
+      <publishTime>07/24/2015 04:37:05</publishTime>
+    </File>
+    <File Include="bin/StubHubScraper.Services.pdb">
+      <publishTime>07/24/2015 04:37:05</publishTime>
+    </File>
+    <File Include="bin/StubHubScraper.Web.dll">
+      <publishTime>07/24/2015 04:37:07</publishTime>
+    </File>
+    <File Include="bin/StubHubScraper.Web.pdb">
+      <publishTime>07/24/2015 04:37:07</publishTime>
+    </File>
+    <File Include="bin/sv/FluentValidation.resources.dll">
+      <publishTime>07/10/2015 19:36:13</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>07/10/2012 21:51:54</publishTime>
+    </File>
+    <File Include="bin/System.Spatial.dll">
+      <publishTime>07/22/2015 01:40:58</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>07/10/2012 21:53:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>07/10/2012 21:51:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.OData.dll">
+      <publishTime>07/22/2015 01:40:43</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>07/10/2012 21:51:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>07/10/2012 21:51:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>07/22/2015 01:40:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>07/10/2012 21:53:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>07/10/2012 21:53:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>07/10/2012 21:53:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>07/10/2012 21:53:02</publishTime>
+    </File>
+    <File Include="bin/tr/FluentValidation.resources.dll">
+      <publishTime>07/10/2015 19:36:13</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>07/22/2015 01:40:58</publishTime>
+    </File>
+    <File Include="bin/WebMatrix.Data.dll">
+      <publishTime>07/10/2012 21:53:02</publishTime>
+    </File>
+    <File Include="bin/WebMatrix.WebData.dll">
+      <publishTime>07/10/2012 21:53:02</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/EntityFramework.resources.dll">
+      <publishTime>07/13/2015 07:11:30</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.Data.Edm.resources.dll">
+      <publishTime>07/10/2015 10:39:51</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.Data.OData.resources.dll">
+      <publishTime>07/10/2015 10:39:52</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.Web.WebPages.OAuth.resources.dll">
+      <publishTime>07/10/2015 10:39:55</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Spatial.resources.dll">
+      <publishTime>07/10/2015 10:39:51</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Helpers.resources.dll">
+      <publishTime>07/09/2015 13:42:28</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Http.OData.resources.dll">
+      <publishTime>07/13/2015 07:11:31</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Mvc.resources.dll">
+      <publishTime>07/09/2015 13:42:28</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Optimization.resources.dll">
+      <publishTime>07/09/2015 13:42:29</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Razor.resources.dll">
+      <publishTime>07/09/2015 13:42:28</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Deployment.resources.dll">
+      <publishTime>07/09/2015 13:42:28</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Razor.resources.dll">
+      <publishTime>07/09/2015 13:42:28</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.resources.dll">
+      <publishTime>07/09/2015 13:42:28</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/WebMatrix.Data.resources.dll">
+      <publishTime>07/10/2015 10:39:54</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/WebMatrix.WebData.resources.dll">
+      <publishTime>07/10/2015 10:39:55</publishTime>
+    </File>
+    <File Include="bin/zh-Hant/Microsoft.Data.Edm.resources.dll">
+      <publishTime>07/10/2015 10:39:51</publishTime>
+    </File>
+    <File Include="bin/zh-Hant/Microsoft.Data.OData.resources.dll">
+      <publishTime>07/10/2015 10:39:52</publishTime>
+    </File>
+    <File Include="bin/zh-Hant/System.Spatial.resources.dll">
+      <publishTime>07/10/2015 10:39:51</publishTime>
+    </File>
+    <File Include="Content/bootstrap-responsive.css">
+      <publishTime>07/22/2015 00:14:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>07/22/2015 00:14:33</publishTime>
+    </File>
+    <File Include="Content/dhtmlx.css">
+      <publishTime>07/22/2015 00:14:33</publishTime>
+    </File>
+    <File Include="Content/imgs/app/bg.jpg">
+      <publishTime>07/22/2015 00:14:23</publishTime>
+    </File>
+    <File Include="Content/imgs/app/bgg.jpg">
+      <publishTime>07/22/2015 00:14:23</publishTime>
+    </File>
+    <File Include="Content/imgs/app/glyphicons-halflings-white.png">
+      <publishTime>07/22/2015 00:14:23</publishTime>
+    </File>
+    <File Include="Content/imgs/app/glyphicons-halflings.png">
+      <publishTime>07/22/2015 00:14:23</publishTime>
+    </File>
+    <File Include="Content/imgs/app/green.gif">
+      <publishTime>07/22/2015 00:14:23</publishTime>
+    </File>
+    <File Include="Content/imgs/app/red.gif">
+      <publishTime>07/22/2015 00:14:23</publishTime>
+    </File>
+    <File Include="Content/imgs/app/site.jpg">
+      <publishTime>07/22/2015 00:14:23</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxacc_terrace/dhxacc_btns.gif">
+      <publishTime>07/22/2015 00:14:26</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxacc_terrace/dhxacc_cell_progress.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxcalendar_terrace/dhxcalendar_arrow_left.gif">
+      <publishTime>07/22/2015 00:14:23</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxcalendar_terrace/dhxcalendar_arrow_right.gif">
+      <publishTime>07/22/2015 00:14:23</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxcalendar_terrace/dhxcalendar_clock.gif">
+      <publishTime>07/22/2015 00:14:23</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxcalendar_terrace/dhxcalendar_mark.gif">
+      <publishTime>07/22/2015 00:14:23</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxcalendar_terrace/dhxcalendar_selector_bottom.gif">
+      <publishTime>07/22/2015 00:14:23</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxcalendar_terrace/dhxcalendar_selector_top.gif">
+      <publishTime>07/22/2015 00:14:23</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxcombo_terrace/dhxcombo_arrow_down.gif">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxcombo_terrace/dhxcombo_arrow_down_dis.gif">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxcombo_terrace/dhxcombo_chbx.gif">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxcp_terrace/dhxcp_colors.png">
+      <publishTime>07/22/2015 00:14:32</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxdataview_terrace/dnd_selector.png">
+      <publishTime>07/22/2015 00:14:32</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxdataview_terrace/dnd_selector_cells.png">
+      <publishTime>07/22/2015 00:14:32</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxdataview_terrace/dnd_selector_lines.png">
+      <publishTime>07/22/2015 00:14:32</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxdataview_terrace/marker.png">
+      <publishTime>07/22/2015 00:14:32</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxeditor_terrace/align_center.gif">
+      <publishTime>07/22/2015 00:14:26</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxeditor_terrace/align_justify.gif">
+      <publishTime>07/22/2015 00:14:26</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxeditor_terrace/align_left.gif">
+      <publishTime>07/22/2015 00:14:26</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxeditor_terrace/align_right.gif">
+      <publishTime>07/22/2015 00:14:26</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxeditor_terrace/bold.gif">
+      <publishTime>07/22/2015 00:14:26</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxeditor_terrace/buttons.gif">
+      <publishTime>07/22/2015 00:14:26</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxeditor_terrace/clear.gif">
+      <publishTime>07/22/2015 00:14:26</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxeditor_terrace/h1.gif">
+      <publishTime>07/22/2015 00:14:26</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxeditor_terrace/h2.gif">
+      <publishTime>07/22/2015 00:14:26</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxeditor_terrace/h3.gif">
+      <publishTime>07/22/2015 00:14:26</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxeditor_terrace/h4.gif">
+      <publishTime>07/22/2015 00:14:26</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxeditor_terrace/indent_dec.gif">
+      <publishTime>07/22/2015 00:14:26</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxeditor_terrace/indent_inc.gif">
+      <publishTime>07/22/2015 00:14:26</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxeditor_terrace/italic.gif">
+      <publishTime>07/22/2015 00:14:26</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxeditor_terrace/list_bullet.gif">
+      <publishTime>07/22/2015 00:14:26</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxeditor_terrace/list_number.gif">
+      <publishTime>07/22/2015 00:14:26</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxeditor_terrace/script_sub.gif">
+      <publishTime>07/22/2015 00:14:26</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxeditor_terrace/script_super.gif">
+      <publishTime>07/22/2015 00:14:26</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxeditor_terrace/strike.gif">
+      <publishTime>07/22/2015 00:14:26</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxeditor_terrace/underline.gif">
+      <publishTime>07/22/2015 00:14:26</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxform_terrace/dhxform_chbxrd.gif">
+      <publishTime>07/22/2015 00:14:32</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxform_terrace/dhxform_upload_buttons.gif">
+      <publishTime>07/22/2015 00:14:32</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxform_terrace/dhxform_upload_uploading.gif">
+      <publishTime>07/22/2015 00:14:32</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/ar_left.gif">
+      <publishTime>07/22/2015 00:14:24</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/ar_left_abs.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/ar_left_abs_dis.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/ar_left_dis.gif">
+      <publishTime>07/22/2015 00:14:24</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/ar_right.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/ar_right_abs.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/ar_right_abs_dis.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/ar_right_dis.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/blank.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/combo_select_dhx_terrace.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/dyn_.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/dyn_down.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/dyn_up.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/imageloaderror.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/item_chk0.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/item_chk0_dis.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/item_chk1.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/item_chk1_dis.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/minus.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/paging_page.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/paging_pages.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/paging_rows.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/plus.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/radio_chk0.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/radio_chk0_dis.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/radio_chk1.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/radio_chk1_dis.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/sort_asc.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/sort_desc.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/tree/blank.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/tree/folder.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/tree/leaf.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/tree/line.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/tree/line1.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/tree/line2.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/tree/line3.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/tree/line4.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/tree/minus.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/tree/minus1.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/tree/minus2.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/tree/minus3.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/tree/minus4.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/tree/minus5.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/tree/plus.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/tree/plus1.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/tree/plus2.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/tree/plus3.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/tree/plus4.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxgrid_terrace/tree/plus5.gif">
+      <publishTime>07/22/2015 00:14:25</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxlayout_terrace/dhxlayout_cell_btns.gif">
+      <publishTime>07/22/2015 00:14:24</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxlayout_terrace/dhxlayout_cell_progress.gif">
+      <publishTime>07/22/2015 00:14:24</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxlayout_terrace/dhxlayout_sep_h.gif">
+      <publishTime>07/22/2015 00:14:24</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxlayout_terrace/dhxlayout_sep_v.gif">
+      <publishTime>07/22/2015 00:14:24</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxmenu_terrace/dhxmenu_arrow_down.gif">
+      <publishTime>07/22/2015 00:14:32</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxmenu_terrace/dhxmenu_arrow_down_dis.gif">
+      <publishTime>07/22/2015 00:14:32</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxmenu_terrace/dhxmenu_arrow_up.gif">
+      <publishTime>07/22/2015 00:14:32</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxmenu_terrace/dhxmenu_arrow_up_dis.gif">
+      <publishTime>07/22/2015 00:14:32</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxmenu_terrace/dhxmenu_chrd.gif">
+      <publishTime>07/22/2015 00:14:32</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxmenu_terrace/dhxmenu_loader.gif">
+      <publishTime>07/22/2015 00:14:32</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxmenu_terrace/dhxmenu_subar.gif">
+      <publishTime>07/22/2015 00:14:32</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxpopup_terrace/dhxpopup_arrow_bottom.gif">
+      <publishTime>07/22/2015 00:14:32</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxpopup_terrace/dhxpopup_arrow_left.gif">
+      <publishTime>07/22/2015 00:14:32</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxpopup_terrace/dhxpopup_arrow_right.gif">
+      <publishTime>07/22/2015 00:14:32</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxpopup_terrace/dhxpopup_arrow_top.gif">
+      <publishTime>07/22/2015 00:14:32</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxribbon_terrace/dhxribbon_arrow.gif">
+      <publishTime>07/22/2015 00:14:23</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxribbon_terrace/dhxribbon_checked.gif">
+      <publishTime>07/22/2015 00:14:23</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxribbon_terrace/dhxribbon_checked_dis.gif">
+      <publishTime>07/22/2015 00:14:23</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtabbar_terrace/dhxtabbar_arrows.gif">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtabbar_terrace/dhxtabbar_button_close.gif">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtabbar_terrace/dhxtabbar_cell_progress.gif">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtoolbar_terrace/dhxtoolbar_arrow.gif">
+      <publishTime>07/22/2015 00:14:32</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtoolbar_terrace/dhxtoolbar_arrow_dis.gif">
+      <publishTime>07/22/2015 00:14:32</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/blank.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/but_cut.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/folderClosed.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/folderOpen.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/iconCheckAll.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/iconCheckDis.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/iconCheckGray.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/iconUncheckAll.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/iconUncheckDis.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/leaf.gif">
+      <publishTime>07/22/2015 00:14:32</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/line.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/line1.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/line1_rtl.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/line2.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/line2_rtl.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/line3.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/line3_rtl.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/line4.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/line4_rtl.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/lock.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/minus.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/minus1.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/minus2.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/minus2_rtl.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/minus3.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/minus3_rtl.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/minus4.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/minus4_rtl.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/minus5.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/minus5_rtl.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/plus.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/plus1.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/plus2.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/plus2_rtl.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/plus3.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/plus3_rtl.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/plus4.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/plus4_rtl.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/plus5.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/plus5_rtl.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/radio_off.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxtree_terrace/radio_on.gif">
+      <publishTime>07/22/2015 00:14:31</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxwins_terrace/dhxwins_buttons.gif">
+      <publishTime>07/22/2015 00:14:24</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxwins_terrace/dhxwins_icon.gif">
+      <publishTime>07/22/2015 00:14:24</publishTime>
+    </File>
+    <File Include="Content/imgs/dhxwins_terrace/dhxwins_progress.gif">
+      <publishTime>07/22/2015 00:14:24</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/activity.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/add-folder.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/add-location.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/add-page.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/add.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/airplane-1.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/airplane-2.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/anchor.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/apple-1.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/apple-2.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/backward.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/battery-1.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/battery-2.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/battery-3.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/birdhouse.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/book.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/browser.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/buy.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/calendar.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/call.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/camera.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/charge.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/chrome.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/clock.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/cloud-1.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/cloud-2.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/coffee.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/coins.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/color.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/comments.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/compass.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/copy-1.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/copy-2.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/credit-card.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/cross.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/delete-folder.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/delete-page.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/down.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/download-files.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/download.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/download2.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/dribbble-player.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/end-call.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/facebook.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/fast-backward.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/fast-forward.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/fat-brush.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/female.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/files.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/flag.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/folder.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/forward.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/grid-view.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/heart.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/hold.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/home-2.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/home.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/image.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/iPhone.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/leaf.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/left.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/link.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/list-view.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/location.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/locked.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/mail-back.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/mail-front.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/male.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/mastercard.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/medal.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/members.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/microphone-1.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/microphone-2.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/money.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/mouse.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/music-note.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/next.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/notepad.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/page.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/paper-plane.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/pause.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/pen.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/pencil.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/phone.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/play.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/plug.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/previous.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/rate-down.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/rate-up.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/remove-location.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/retweet.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/ribbon.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/right.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/ruler.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/screen.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/screw-driver.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/search.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/sell.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/servers.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/settings.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/shopping-cart.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/skinny-brush.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/stacked-papers.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/star.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/stats-down.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/stats-up.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/stats.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/stop.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/target.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/tick.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/trash.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/trophy.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/tv.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/twitter.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/unlocked.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/up.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/update.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/upload-files.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/upload.png">
+      <publishTime>07/22/2015 00:14:30</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/video.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/views.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/imgs/toolbar/wrench.png">
+      <publishTime>07/22/2015 00:14:29</publishTime>
+    </File>
+    <File Include="Content/login.css">
+      <publishTime>07/22/2015 00:14:33</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>07/22/2015 00:14:33</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>07/22/2015 00:13:55</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>07/13/2015 07:11:19</publishTime>
+    </File>
+    <File Include="Images/accent.png">
+      <publishTime>07/22/2015 00:13:55</publishTime>
+    </File>
+    <File Include="Images/bullet.png">
+      <publishTime>07/22/2015 00:13:56</publishTime>
+    </File>
+    <File Include="Images/heroAccent.png">
+      <publishTime>07/22/2015 00:13:56</publishTime>
+    </File>
+    <File Include="Images/orderedList0.png">
+      <publishTime>07/22/2015 00:13:56</publishTime>
+    </File>
+    <File Include="Images/orderedList1.png">
+      <publishTime>07/22/2015 00:13:56</publishTime>
+    </File>
+    <File Include="Images/orderedList2.png">
+      <publishTime>07/22/2015 00:13:56</publishTime>
+    </File>
+    <File Include="Images/orderedList3.png">
+      <publishTime>07/22/2015 00:13:56</publishTime>
+    </File>
+    <File Include="Images/orderedList4.png">
+      <publishTime>07/22/2015 00:13:56</publishTime>
+    </File>
+    <File Include="Images/orderedList5.png">
+      <publishTime>07/22/2015 00:13:56</publishTime>
+    </File>
+    <File Include="Images/orderedList6.png">
+      <publishTime>07/22/2015 00:13:56</publishTime>
+    </File>
+    <File Include="Images/orderedList7.png">
+      <publishTime>07/22/2015 00:13:56</publishTime>
+    </File>
+    <File Include="Images/orderedList8.png">
+      <publishTime>07/22/2015 00:13:56</publishTime>
+    </File>
+    <File Include="Images/orderedList9.png">
+      <publishTime>07/22/2015 00:13:56</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>07/22/2015 00:13:51</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>07/24/2015 10:24:10</publishTime>
+    </File>
+    <File Include="Scripts/ajaxlogin.js">
+      <publishTime>07/22/2015 00:13:52</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>07/22/2015 00:13:52</publishTime>
+    </File>
+    <File Include="Scripts/dateFormat.js">
+      <publishTime>07/22/2015 00:13:52</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlx.js">
+      <publishTime>07/22/2015 00:13:52</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxcommon.js">
+      <publishTime>07/22/2015 00:13:52</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.8.2.js">
+      <publishTime>07/22/2015 00:13:52</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.8.2.min.js">
+      <publishTime>07/22/2015 00:13:52</publishTime>
+    </File>
+    <File Include="Scripts/main.js">
+      <publishTime>07/24/2015 04:36:48</publishTime>
+    </File>
+    <File Include="Scripts/main1.js">
+      <publishTime>07/22/2015 00:13:52</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>07/22/2015 00:13:53</publishTime>
+    </File>
+    <File Include="Views/Home/_Login.cshtml">
+      <publishTime>07/22/2015 00:13:54</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>07/22/2015 00:13:53</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>07/22/2015 00:13:53</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>07/24/2015 10:24:08</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

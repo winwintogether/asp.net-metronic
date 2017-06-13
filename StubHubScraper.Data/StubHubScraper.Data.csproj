@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C022545A-930F-46A4-8D9C-BE1187215A07}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StubHubScraper.Data</RootNamespace>
+    <AssemblyName>StubHubScraper.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationDbObjectContext.cs" />
+    <Compile Include="ApplicationEfRepository.cs" />
+    <Compile Include="DataReaderExtensions.cs" />
+    <Compile Include="DbContextExtensions.cs" />
+    <Compile Include="DbObjectContext.cs" />
+    <Compile Include="Domain\Event.cs" />
+    <Compile Include="Domain\EventTicket.cs" />
+    <Compile Include="Domain\LogLevel.cs" />
+    <Compile Include="Domain\User.cs" />
+    <Compile Include="Domain\QuickSearch.cs" />
+    <Compile Include="Domain\QuickTicket.cs" />
+    <Compile Include="Domain\Search.cs" />
+    <Compile Include="Domain\SearchEvent.cs" />
+    <Compile Include="Domain\SearchTemp.cs" />
+    <Compile Include="Domain\SearchBulk.cs" />
+    <Compile Include="Domain\Log.cs" />
+    <Compile Include="EfRepository.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="IApplicationDbContext.cs" />
+    <Compile Include="IApplicationRepository.cs" />
+    <Compile Include="IDbContext.cs" />
+    <Compile Include="Mapping\EventMap.cs" />
+    <Compile Include="Mapping\UserMap.cs" />
+    <Compile Include="Mapping\EventTicketMap.cs" />
+    <Compile Include="Mapping\QuickSearchMap.cs" />
+    <Compile Include="Mapping\QuickTicketMap.cs" />
+    <Compile Include="Mapping\SearchTempMap.cs" />
+    <Compile Include="Mapping\SearchBulkMap.cs" />
+    <Compile Include="Mapping\LogMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\StubHubScraper.Core\StubHubScraper.Core.csproj">
+      <Project>{b04eff4f-e2b1-4680-80f8-bd079a433a7e}</Project>
+      <Name>StubHubScraper.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StubHubScraper.Framework\StubHubScraper.Framework.csproj">
+      <Project>{1da5c277-31d7-4f9d-abc3-06dd28197afb}</Project>
+      <Name>StubHubScraper.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Mapping\SearchMap.cs" />
+    <Compile Include="Mapping\SearchEventMap.cs" />
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

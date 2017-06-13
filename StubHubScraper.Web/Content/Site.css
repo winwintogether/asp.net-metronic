@@ -1,0 +1,227 @@
+﻿/*these styles allow dhtmlxLayout to work in fullscreen mode in different browsers correctly*/
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    overflow: hidden;
+    background-color:white;
+    font-family: Tahoma;
+    font-size: 11px;
+}
+
+.header
+{
+    height: 85px;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    background: url(imgs/banner.jpg) no-repeat;
+}
+
+.logo
+{
+    width: 300px;
+    float: left;
+}
+
+.profile
+{    
+    margin: 0 auto;
+    line-height: 75px;
+    font-size: 16px;
+    width: 450px;
+}
+.profile ul
+{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+.profile ul li
+{
+    display: inline;
+    margin-left: 5px;
+}
+.profile ul li a
+{
+    color: #fff;
+}
+
+.footer
+{
+    background-color: #333;
+    color: white;
+}
+
+div.dhxcont_global_layout_area
+{
+    left: 0!important;
+    top: 0!important;
+    width: 100%!important;
+}
+
+table.dhtmlxLayoutPolyContainer_dhx_terrace 
+td.dhtmlxLayoutSinglePoly div.dhtmlxPolyInfoBar
+{
+    background-color: #ECF5FD!important;
+}
+table.dhtmlxLayoutPolyContainer_dhx_terrace 
+td.dhtmlxLayoutSinglePoly 
+div.dhtmlxPolyInfoBar 
+div.dhtmlxInfoBarButtonsFake
+{
+    background-color: #ECF5FD!important;
+}
+table.dhtmlxLayoutPolyContainer_dhx_terrace 
+td.dhtmlxLayoutSinglePoly 
+div.dhtmlxPolyInfoBar 
+div.dhtmlxInfoBarLabel
+{
+    font-weight: bold;
+}
+
+table.dhtmlxLayoutPolyContainer_dhx_terrace 
+td.dhtmlxLayoutSinglePoly 
+div.dhtmlxPolyInfoBarCollapsedHor 
+div.dhtmlxInfoBarButtonsFake
+{
+    background-color: #C6E1FA!important;
+}
+table.dhtmlxLayoutPolyContainer_dhx_terrace 
+td.dhtmlxLayoutSinglePoly 
+div.dhtmlxPolyInfoBarCollapsedHor 
+div.dhtmlxInfoButtonShowHide_ver
+{
+    background-color: #C6E1FA!important;
+}
+
+table.dhtmlxLayoutPolyContainer_dhx_terrace 
+td.dhtmlxLayoutSinglePoly 
+div.dhtmlxPolyInfoBarCollapsedHor 
+div.dhtmlxInfoBarLabel_collapsed_ver
+{
+    color: #454544!important;
+    font-weight: bold!important;
+}
+
+div.gridbox_dhx_terrace .xhdr
+{
+    border-top: 0px solid #cecece;
+}
+
+div.gridbox_dhx_terrace table.hdr td
+{
+    border-color: #e6e6e6!important;
+    border-width: 0px 1px 0px 0px!important;
+}
+div.gridbox_dhx_terrace table.hdr td div.hdrcell
+{
+    text-transform: none!important;
+    font-weight: bold;
+    padding-left: 10px!important;
+}
+
+.dhxform_obj_dhx_terrace input.dhxform_textarea, 
+.dhxform_obj_dhx_terrace textarea.dhxform_textarea,
+.dhxform_obj_dhx_terrace .dhxform_select
+{
+    padding: 2px 2px!important;
+}
+
+div.gridbox_dhx_terrace table.obj.row20px tr td
+{
+    /*height: 25px!important;*/
+    font-size: 10px!important;
+    border-width: 0px 1px 1px 0px!important;
+    padding-right: 10px!important;
+    padding-left: 10px!important;
+}
+
+.dhtmlx-error{
+    color:white;
+    background-color:red;
+}
+
+div.gridbox_dhx_terrace.gridbox table.obj.row20px tr td {
+    height: 20px;
+    line-height: 20px;
+}
+
+.dhxlayout_base_dhx_terrace div.dhx_cell_layout div.dhx_cell_hdr{
+    border-left: 1px solid #cecece;
+    border-right: 1px solid #cecece;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background-color: #ECF5FD!important;
+}
+
+.dhxform_obj_dhx_terrace div.fs_dhxform_item_label_left {
+    padding: 5px 5px 5px 2px;
+}
+div.gridbox_dhx_terrace.gridbox .xhdr {
+    border-bottom: 1px solid #cecece;
+    background-color: #f5f5f5;
+}
+div.gridbox_dhx_terrace.gridbox table.obj tr td{
+    border-color: #e6e6e6;
+}
+div.gridbox_dhx_terrace.gridbox .odd_dhx_terrace {
+    background-color: #fafaf8;
+}
+
+.dhxwins_vp_dhx_terrace div.dhxwin_active div.dhx_cell_wins div.dhx_cell_toolbar_def, .dhxwins_vp_dhx_terrace div.dhxwin_inactive div.dhx_cell_wins div.dhx_cell_toolbar_def {
+    padding: 5px 5px 5px 5px;
+    border-width: 1px;    
+}
+.dhxwins_vp_dhx_terrace div.dhxwin_hdr
+{
+    background-color: transparent;
+}
+div.gridbox_dhx_terrace.gridbox table.hdr tr,
+div.gridbox_dhx_terrace.gridbox .xhdr,
+div.gridbox_dhx_terrace.gridbox table.hdr td,
+.dhx_toolbar_dhx_terrace div.dhx_toolbar_btn, .dhx_toolbar_dhx_terrace div.dhx_toolbar_arw
+{
+    background-color: #f9f9f9;
+}
+    div.gridbox_dhx_terrace.gridbox table.hdr td div.hdrcell
+    {
+        line-height: 25px;
+    }
+
+div.gridbox_dhx_terrace.gridbox table.obj tr.rowselected td {
+    background-color: #fff3a1!important;
+}
+
+div.dhxcombo_in_grid_parent {
+    height: 100%;
+    position: relative;
+    top: 0;
+}
+
+div.dhxcombo_in_grid_parent div.dhxcombo_dhx_terrace {
+    left: -10px;
+    position: absolute;
+    top: 0;
+}
+
+.formtips {
+  font-size: 10px;
+  margin-top: -10px;
+  font-style: italic;
+  font-weight: lighter;
+  text-align: right;
+}
+.formtips .dhxform_txt_label2 {
+    font-weight: lighter!important;
+}
+
+.formBtn .dhxform_btn_txt {
+      margin:0 10px!important;
+      line-height:20px!important;
+      width: 50px;
+      height: auto!important;
+      white-space: normal!important;
+}
+
+

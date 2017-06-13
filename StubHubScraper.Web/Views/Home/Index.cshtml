@@ -1,0 +1,59 @@
+﻿@functions{
+    public string GetAntiForgeryToken()
+    {
+        string cookieToken, formToken;
+        AntiForgery.GetTokens(null, out cookieToken, out formToken);
+        return cookieToken + ":" + formToken;
+    }
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket Statistics</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/dateformat")
+</head>
+@if (@User.Identity.IsAuthenticated)
+{
+    @Styles.Render("~/bundles/dhtmlx_css")
+    @Scripts.Render("~/bundles/dhtmlx")
+    <input id="antiForgeryToken" type="hidden" value="@GetAntiForgeryToken()" />
+    <input id="currentUsername" type="hidden" value="@ViewBag.Username" />
+    <input id="adminUser" type="hidden"  value="@ViewBag.IsAdmin" />
+    <input id="userId" type="hidden"  value="@ViewBag.UserId" />
+    <body onload="init();">
+        @using (Html.BeginForm("LogOff", "User", new { area = "" }, FormMethod.Post, new { id = "logoutForm" }))
+        {
+            @Html.AntiForgeryToken()
+        }
+    </body>
+}
+else
+{
+    @Scripts.Render("~/bundles/ajaxlogin")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Styles.Render("~/bundles/bootstrap_css")
+    @Styles.Render("~/bundles/login_css")
+    <body>
+
+        <div class="container-fluid">
+            <div class="row-fluid " style="margin-top: 100px;">
+                <div class="span3">
+                    <div class="key_logo">&nbsp;</div>
+                </div>
+                <div class="span6  login_body">
+                    <div class="form_wrap" align="center">
+                        @Html.Partial("_Login")
+                    </div>
+                    <div class="span3">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+}
+</html>
