@@ -1176,6 +1176,7 @@ function loadSearchManagementTab() {
         }
     })
 }
+
 function loadManualScrapingCenterTab() {
 
     var manualScrapingCenter = tabs.tabs("a3").attachLayout('3U');

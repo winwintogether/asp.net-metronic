@@ -83,13 +83,36 @@
             alert("Error when loading data!");
         });
     }
+    function loadSearchGridData(url, grid) {
+        ajaxRequest("get", url).done(function (data) {
+
+            var tData = {};
+            tData.total_count = data.length;
+            tData.pos = 0;
+            tData.data = data;
+
+            grid.find("tbody").empty();
+
+            $.each(data, function (i, v) {
+                //grid.DataTable().row.add([v["Zone"], v["Section"], v["Row"], v["Price"], v["Qty"], v["DateSold"]]);
+                grid.DataTable().draw();
+            });
+
+
+        }).fail(function () {
+            alert("Error when loading data!");
+        });
+    }
 
     $("#getZones").click(function () {
+       
         var eventId = $("#txtEventId").val();
         if (eventId != "") {
             ajaxRequest("get", "/api/eventzones/?eventId=" + eventId).done(function (data) {
+              
                 $.each(data, function (i, v) {
-                    //$("#PickZones").append("<option value='" + v[valKey] + "'>" + v[showKey] + "</option>")
+                    console.log(v);
+                    $("#PickZones").append("<option value='" + v["value"] + "'>" + v["text"] + "</option>")
                 });
             });
         }
@@ -136,10 +159,10 @@
         }
     });
     $("#btnQuickSearch").click(function () {
-
-        if (!$("cboQuickSearches").is(':disabled'))
+       
+        if ($("cboQuickSearches").is(':disabled'))
             return true;
-
+       
         var eventId = $("#txtEventId").val();
         var isChecked = $("#cbSaveQuickSearch").is(':checked');
         var isSave = 0;
@@ -152,6 +175,8 @@
         if (isChecked) isSave = 1;
         ajaxRequest("get", "/api/quicksearches/" + eventId + "?isNew=1&isSave=" + isSave + "&sectionFrom=" + sectionFrom + "&sectionTo=" + sectionTo + "&lastWeekSalesOnly=" + LastWeekSalesOnly + "&zones=" + zones).done(function (data) {
 
+            console.log(JSON.stringify(data));
+
             $("#txtEventId").val(data.EventId);
             $("#SectionFrom").val(data.SectionFrom);
             $("#SectionTo").val(data.SectionTo);
@@ -159,13 +184,15 @@
 
             $("#AllSales_2").val(data.AllSales);
             $("#AllTickets_2").val(data.AllTickets);
-            $("#AvgPrice").val(data.AvgPrice);
-            $("#FilterSales").val(data.FilterSales);
-            $("#FilterTickets").val(data.FilterTickets);
-            $("#FilterAvgPrice").val(data.FilterAvgPrice);
+            $("#AvgPrice_2").val(data.AvgPrice);
+            $("#FilterSales_2").val(data.FilterSales);
+            $("#FilterTickets_2").val(data.FilterTickets);
+            $("#FilterAvgPrice_2").val(data.FilterAvgPrice);
 
             $("#PickZones").val("");
+            var qsTab2Grid = $("#table_2");
             loadGridData("/api/quicktickets/?quickId=" + data.Id + "&isSave=" + isSave, qsTab2Grid);
+
             var cboQuickSearches = $("#cboQuickSearches");
             cboQuickSearches.empty();
             loadComboData(cboQuickSearches, "/api/QuickSearches/", "Name", "Id", '');
@@ -256,6 +283,7 @@
        var cboQuickSearches =$("#cboQuickSearches");
        loadComboData(cboQuickSearches, "/api/QuickSearches/", "Name", "Id", '');
    }
+
    function CreateSearchInit() {
    }
 
