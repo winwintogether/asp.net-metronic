@@ -1003,6 +1003,7 @@ function loadSearchManagementTab() {
         className: "formBtn"
     }];
     smAAbutton.loadStruct(smAAbuttonData, 'json');
+
     smAAbutton.attachEvent("onButtonClick", function (name) {
         if (name == "btnReload") {
             loadSearches();

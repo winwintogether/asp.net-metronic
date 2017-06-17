@@ -1,7 +1,7 @@
 ﻿@model StubHubScraper.Web.Models.LoginModel
 
 
-@using (Html.BeginForm("JsonLogin", "User", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { id = "loginForm" }))
+@using (Html.BeginForm("JsonLogin", "User", new { ReturnUrl = "" }, FormMethod.Post, new { id = "loginForm" }))
 {
     @Html.AntiForgeryToken()
     <br /> 

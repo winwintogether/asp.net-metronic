@@ -114,7 +114,54 @@
         <!-- BEGIN CONTENT BODY -->
         <div class="page-content">
             <div class="row">
-                
+                <div class="col-md-12">
+                    <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                    <div class="portlet light ">
+                        <div class="portlet-title">
+                            <div class="caption font-dark">
+                                <span>
+                                    Archived Searches
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="portlet-body">
+                           <div class="row">
+                              <div class="col-md-12">
+                                  <div class="md-checkbox">
+                                      <input type="checkbox" id="showArchivedSearches" class="md-check">
+                                      <label for="showArchivedSearches">
+                                          <span></span>
+                                          <span class="check"></span>
+                                          <span class="box"></span> Show Archived Searches
+                                      </label>
+                                  </div> 
+                              </div>  
+                              <div class="col-md-8">
+                                  <table class="table table-striped table-bordered table-hover" id="table_3">
+                                     <thead>
+                                         <tr>
+                                            <th> Name </th>
+                                            <th> Schedule Date </th>
+                                            <th> Run Once Date </th>
+                                          </tr>
+                                       </thead>
+                                       <tbody></tbody>
+                                   </table>
+                                </div>
+                                <div class="col-md-4">
+                                    <form class="form-horizontal">
+                                        <div class="row" style="height:400px;">
+                                            <button id="btnReload" type="button" class="btn btn-primary">Reload</button> 
+                                            <button id="btnDeleteSelectedTickets" type="button" class="btn btn-primary">Delete Selected Searches</button> 
+                                        </div>
+                                     </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END EXAMPLE TABLE PORTLET-->
+                </div>
             </div>
         </div>
         <!-- END CONTENT BODY -->

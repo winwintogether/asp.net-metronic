@@ -542,6 +542,7 @@
     <Content Include="Scripts\dateFormat.js" />
     <Content Include="Scripts\dhtmlx.js" />
     <Content Include="Scripts\dhtmlxcommon.js" />
+    <Content Include="Scripts\custom_table.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <Content Include="Scripts\custom.js" />

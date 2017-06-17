@@ -52,7 +52,10 @@ namespace StubHubScraper.Web
             bundles.Add(new StyleBundle("~/bundles/login_css").Include(
                             "~/Content/login.css"));
             bundles.Add(new ScriptBundle("~/bundles/custom").Include(
-                   "~/Scripts/custom.js")); 
+                   "~/Scripts/custom.js"));
+            bundles.Add(new ScriptBundle("~/bundles/custom_table").Include(
+                  "~/Scripts/custom_table.js"));
+
             bundles.Add(new StyleBundle("~/bundles/metronic_css").Include(
                 "~/Content/assets/global/plugins/font-awesome/css/font-awesome.min.css",
                 "~/Content/assets/global/plugins/simple-line-icons/simple-line-icons.min.css",
@@ -82,7 +85,7 @@ namespace StubHubScraper.Web
                    "~/Content/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js",
                 //   "~/Content/assets/global/plugins/echarts/echarts.js",
                    "~/Content/assets/global/scripts/app.min.js",
-                   "~/Content/assets/pages/scripts/table-datatables-rowreorder.min.js",
+               //    "~/Content/assets/pages/scripts/table-datatables-rowreorder.min.js",
                  //  "~/Content/assets/pages/scripts/mychart.js",
                    "~/Content/assets/layouts/layout2/scripts/layout.min.js",
                    "~/Content/assets/layouts/layout2/scripts/demo.min.js",

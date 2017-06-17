@@ -31,11 +31,13 @@
             @Html.AntiForgeryToken()
         }
     </body>
-        */
+       
+    */
     <input id="antiForgeryToken" type="hidden" value="@GetAntiForgeryToken()" />
     <input id="currentUsername" type="hidden" value="@ViewBag.Username" />
     <input id="adminUser" type="hidden" value="@ViewBag.IsAdmin" />
     <input id="userId" type="hidden" value="@ViewBag.UserId" />
+    <input id="currentpage" type="hidden" value="@ViewBag.ReturnUrl"/>
     @Styles.Render("~/bundles/metronic_css")
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-md">
        @if (@ViewBag.ReturnUrl == "1")
@@ -62,7 +64,9 @@
     </body>
    
     @Scripts.Render("~/bundles/metronic_js")
+    @Scripts.Render("~/bundles/custom_table")
     @Scripts.Render("~/bundles/custom")
+   
 }
 else
 {
