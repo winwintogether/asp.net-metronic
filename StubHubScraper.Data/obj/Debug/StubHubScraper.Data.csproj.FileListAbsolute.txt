@@ -15,3 +15,9 @@ D:\metronic\WebStubhub\StubHubScraper.Data\bin\Debug\zh-Hans\EntityFramework.res
 D:\metronic\WebStubhub\StubHubScraper.Data\obj\Debug\StubHubScraper.Data.csprojResolveAssemblyReference.cache
 D:\metronic\WebStubhub\StubHubScraper.Data\obj\Debug\StubHubScraper.Data.dll
 D:\metronic\WebStubhub\StubHubScraper.Data\obj\Debug\StubHubScraper.Data.pdb
+D:\Metronic\WebStubhub\StubHubScraper.Data\bin\Debug\System.Web.Http.dll
+D:\Metronic\WebStubhub\StubHubScraper.Data\bin\Debug\System.Net.Http.Formatting.dll
+D:\Metronic\WebStubhub\StubHubScraper.Data\bin\Debug\System.Web.Http.xml
+D:\Metronic\WebStubhub\StubHubScraper.Data\bin\Debug\System.Net.Http.Formatting.xml
+D:\Metronic\WebStubhub\StubHubScraper.Data\bin\Debug\zh-Hans\System.Web.Http.resources.dll
+D:\Metronic\WebStubhub\StubHubScraper.Data\bin\Debug\zh-Hans\System.Net.Http.Formatting.resources.dll

@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -543,6 +544,7 @@
     <Content Include="Scripts\dhtmlxcommon.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\main1.js" />
     <Content Include="Web.config">
@@ -574,6 +576,12 @@
     <Content Include="Views\Home\_Login.cshtml">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="Views\Home\_QuickSearch.cshtml" />
+    <Content Include="Views\Home\_TicketData.cshtml" />
+    <Content Include="Views\Home\_ExecuteSearch.cshtml" />
+    <Content Include="Views\Home\_CreateSearch.cshtml" />
+    <Content Include="Views\Home\_.cshtml" />
+    <Content Include="Views\Home\_SearchLog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

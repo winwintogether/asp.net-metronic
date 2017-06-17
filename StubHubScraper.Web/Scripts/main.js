@@ -614,6 +614,7 @@ function loadQuickSearchesTab() {
     qsAform.uncheckItem("cbSaveQuickSearch");
     qsAform.disableItem("cbSaveQuickSearch");
     qsAform.disableItem("txtEventId");
+
     var cboQuickSearches = qsAform.getCombo("cboQuickSearches");
     loadComboData(cboQuickSearches, "/api/QuickSearches/", "Name", "Id", '');
 

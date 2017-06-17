@@ -1,0 +1,127 @@
+﻿  <!-- BEGIN HEADER -->
+<div class="page-header navbar navbar-fixed-top">
+    <!-- BEGIN HEADER INNER -->
+    <div class="page-header-inner ">
+        <!-- BEGIN LOGO -->
+        <div class="page-logo">
+            <a href="#">
+               <img src="Content/assets/layouts/layout2/img/logo-default.png" alt="logo" class="logo-default" />
+
+            </a>
+            <div class="menu-toggler sidebar-toggler">
+                <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+            </div>
+        </div>
+        <!-- END LOGO -->
+        <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+        <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
+        <!-- END RESPONSIVE MENU TOGGLER -->
+        <!-- BEGIN PAGE TOP -->
+        <div class="page-top">
+
+            <div class="top-menu">
+                <ul class="nav navbar-nav pull-right">
+
+                    <li class="dropdown dropdown-user">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <img alt="" class="img-circle" src="Content/assets/layouts/layout2/img/avatar3_small.jpg" />
+                            <span class="username username-hide-on-mobile"> Test@Test.com </span>
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-default">
+                            <li>
+                                <a href="#">
+                                    <i class="icon-user"></i>Management Users
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <!-- END USER LOGIN DROPDOWN -->
+                    <!-- BEGIN QUICK SIDEBAR TOGGLER -->
+                    <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                    <li class="dropdown dropdown-extended quick-sidebar-toggler">
+                        <span class="sr-only">Toggle Quick Sidebar</span>
+                        <i class="icon-logout"></i>
+                    </li>
+                    <!-- END QUICK SIDEBAR TOGGLER -->
+                </ul>
+            </div>
+            <!-- END TOP NAVIGATION MENU -->
+        </div>
+        <!-- END PAGE TOP -->
+    </div>
+    <!-- END HEADER INNER -->
+</div>
+<!-- END HEADER -->
+<!-- BEGIN HEADER & CONTENT DIVIDER -->
+<div class="clearfix"> </div>
+<!-- END HEADER & CONTENT DIVIDER -->
+<!-- BEGIN CONTAINER -->
+<div class="page-container">
+    <!-- BEGIN SIDEBAR -->
+    <div class="page-sidebar-wrapper">
+        <div class="page-sidebar navbar-collapse collapse">
+            <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                <li class="nav-item start active open">
+                    <a href=@Url.Action("Index", "Home", new { ReturnUrl = "1" }) class="nav-link nav-toggle">
+                        <i class="icon-home"></i>
+                        <span class="title">Quick Search</span>
+                        <span class="selected"></span>
+                        <span class="arrow open"></span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href=@Url.Action("Index", "Home", new { ReturnUrl = "2" }) class="nav-link nav-toggle">
+                        <i class="icon-briefcase"></i>
+                        <span class="title">Create Search</span>
+                        <span class="arrow"></span>
+                        <!--<span class="selected"></span>
+                        <span class="arrow open"></span>-->
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href=@Url.Action("Index", "Home", new { ReturnUrl = "3" }) class="nav-link nav-toggle">
+                        <i class="icon-home"></i>
+                        <span class="title">Execute Search</span>
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href=@Url.Action("Index", "Home", new { ReturnUrl = "4" }) class="nav-link nav-toggle">
+                        <i class="icon-home"></i>
+                        <span class="title">Ticket Data</span>
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href=@Url.Action("Index", "Home", new { ReturnUrl = "5" }) class="nav-link nav-toggle">
+                        <i class="icon-home"></i>
+                        <span class="title">Search Log</span>
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+
+            </ul>
+            <!-- END SIDEBAR MENU -->
+        </div>
+        <!-- END SIDEBAR -->
+    </div>
+    <!-- END SIDEBAR -->
+    <!-- BEGIN CONTENT -->
+    <div class="page-content-wrapper">
+        <!-- BEGIN CONTENT BODY -->
+        <div class="page-content">
+            <div class="row">
+                
+            </div>
+        </div>
+        <!-- END CONTENT BODY -->
+    </div>
+    <!-- END CONTENT -->
+
+</div>
+<!-- END CONTAINER -->

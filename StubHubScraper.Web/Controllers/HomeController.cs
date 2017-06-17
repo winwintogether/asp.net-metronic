@@ -19,6 +19,9 @@ namespace StubHubScraper.Web.Controllers
         [AllowAnonymous]
         public ActionResult Index(string returnUrl)
         {
+            if (returnUrl == null) {
+                returnUrl = "1";
+            }
             ViewBag.ReturnUrl = returnUrl;
 
             var user = _authenticationService.GetAuthenticatedUser();
@@ -30,6 +33,10 @@ namespace StubHubScraper.Web.Controllers
             }
 
             return View();
+        }
+
+        public ActionResult newIndex() {
+            return Content("Welcome");
         }
 
     }
