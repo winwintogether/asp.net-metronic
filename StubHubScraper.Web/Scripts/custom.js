@@ -246,7 +246,6 @@
                     });
 */
                 }
-                //       qsAform.reloadOptions("PickZones", []);
                 $("#PickZones").empty();
 
             });
@@ -446,6 +445,88 @@
             });
         });
     }
+
+    $("#cboSearches").on("click", function () {
+        if ($(this).val() != "") {
+            ajaxRequest("get", "/api/scrapingevent/?searchId=" + $(this).val()).done(function (data) {
+                $.each(data, function (i, v) {
+                    console.log(v);
+                    $("#eventlist").append("<option value='" + v["value"] + "'>" + v["text"] + "</option>")
+                });
+            });
+        }
+        else {
+            $("#eventlist").empty();
+        }
+    });
+    
+    $("3btnScrapingStart").on("click", function () {
+        eventIds = $("#eventlist").val();
+        $("#btnScrapingStop").attr("disabled",false);
+        //   manualScrapingCenter.cells('c').progressOn();
+        if (eventIds != "") {
+            ajaxRequest("get", "/api/scrapingevent/?ids=" + eventIds).done(function (data) {
+               //manualScrapingCenter.cells('c').progressOff();
+               alert("Searching complete");
+            });
+        }
+        else {
+            //manualScrapingCenter.cells('c').progressOff();
+            alert("Please select at least 1 event.");
+        }
+    });
+
+    $("#btnScrapingStop").on("click", function () {
+        ajaxRequest("get", "/api/scrapingstop/").done(function (data) {
+            //manualScrapingCenter.cells("c").progressOff();
+            alert("Searching stop");
+        });
+    });
+    $("#btnDownload").on("click", function () {
+        eventIds = $("#eventlist").val();
+        if (eventIds != "")
+            window.location = "ExportToCSV/ScrapingEventsToCSV?ids=" + eventIds;
+    });
+
+    
+    $("#btnScrapingStart_2").on("click", function () {
+        var searchIds = $("#multiSearches").val();
+        if (searchIds != "") {
+           // manualScrapingCenter.cells("c").progressOn();
+            ajaxRequest("get", "/api/scrapingmultisearches/?ids=" + searchIds).done(function (data) {
+                //manualScrapingCenter.cells("c").progressOff();
+                alert("Searching complete");
+            });
+        }
+        else {
+           // manualScrapingCenter.cells("c").progressOff();
+            alert("Please select at least 1 searchItem");
+        }
+        $("#btnScrapingStop").attr("disabled",false);
+    });
+    $("#btnScrapingStop_2").on("click", function () {
+        ajaxRequest("get", "/api/scrapingstop/").done(function (data) {
+           // manualScrapingCenter.cells("c").progressOff();
+            alert("Searching stop");
+        });
+    });
+    $("#btnDownload_2").on("click", function () {
+        var searchIds = $("#multiSearches").val();
+        if (searchIds != "")
+            window.location = "ExportToCSV/ScrapingMultiSearchesToCSV?ids=" + searchIds;
+
+    });
+
+/*******************************Ticket Data*****************************************/
+    function TicketDataInit() {
+
+    }
+
+/*******************************Searching Log*****************************************/
+    function SearchingLogInit() {
+
+    }
+
    switch ($("#currentpage").val()) {
        case "1":
            console.log("Here is QuickSearch");
@@ -460,9 +541,11 @@
            ManualScrapingInit();
            break;
        case "4":
-           loadStubHubDatabaseTab();
+           console.log("Here is TicketData");
+           TicketDataInit();
            break;
        case "5":
+           console.log("Here is SearingLog");
            loadScrapingLogTab();
            break;
    }
