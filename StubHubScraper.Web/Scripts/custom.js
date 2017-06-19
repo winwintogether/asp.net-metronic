@@ -2,18 +2,7 @@
        
     }
 
-   
-    function loadSearches() {
-        // var showArchivedSearches = $('#showArchivedSearches').is(':checked');
-        // var archived = 0;
-        // if (showArchivedSearches)
-        //     archived = 1;
-        // loadGridData("/api/search/?archived=" + archived, searchesGrid);
-    }
-
-   
-   
-    
+       
     $("#deleteQuickSearchItem").click(function () {
         alert("Click deleteQuickSearchItem");
     });
@@ -46,6 +35,8 @@
     function failCallback(elem) {
         alert("Connetion error");
     }
+   
+/*****************************Quick Search**********************************/
     function loadComboData(combo, url, showKey, valKey, val) {
         ajaxRequest("get", url).done(function (data) {
             if (data.length > 0) {
@@ -63,6 +54,7 @@
             }
         }).fail(failCallback);
     }
+
     function loadGridData(url, grid) {
         ajaxRequest("get", url).done(function (data) {
 
@@ -83,25 +75,15 @@
             alert("Error when loading data!");
         });
     }
-    function loadSearchGridData(url, grid) {
-        ajaxRequest("get", url).done(function (data) {
 
-            var tData = {};
-            tData.total_count = data.length;
-            tData.pos = 0;
-            tData.data = data;
+    function QuickSearchInit() {
 
-            grid.find("tbody").empty();
+        $("#cbSaveQuickSearch").attr("checked", false);
+        $("#cbSaveQuickSearch").attr('disabled', true);
+        $("#txtEventId").attr('disabled', true);
 
-            $.each(data, function (i, v) {
-                //grid.DataTable().row.add([v["Zone"], v["Section"], v["Row"], v["Price"], v["Qty"], v["DateSold"]]);
-                grid.DataTable().draw();
-            });
-
-
-        }).fail(function () {
-            alert("Error when loading data!");
-        });
+        var cboQuickSearches = $("#cboQuickSearches");
+        loadComboData(cboQuickSearches, "/api/QuickSearches/", "Name", "Id", '');
     }
 
     $("#getZones").click(function () {
@@ -117,7 +99,7 @@
             });
         }
     });
-    $("#cbDoNewQuickSearch").click(function () {
+    $("#cbDoNewQuickSearch").on("click",function () {
 
         if ($(this).is(':checked')) {
 
@@ -158,7 +140,7 @@
             $("txtEventId").attr("disabled", true);
         }
     });
-    $("#btnQuickSearch").click(function () {
+    $("#btnQuickSearch").on("click",function () {
        
         if ($("cboQuickSearches").is(':disabled'))
             return true;
@@ -213,14 +195,14 @@
         });
 
     });
-    $("#btnExportToCSV").click(function () {
+    $("#btnExportToCSV").on("click",function () {
         var eventId = $("#txtEventId").val();
         var isChecked = $("#cbDoNewQuickSearch").is(':checked');
         var isNew = 0;
         if (isChecked) isNew = 1;
         window.location = "ExportToCSV/QuickSearchToCSV?eventid=" + eventId + "&isNew=" + isNew;
     });
-    $("#cboQuickSearches").change(function () {
+    $("#cboQuickSearches").on("change",function () {
         if ($(this).val() != "") {
             ajaxRequest("get", "/api/quicksearches/" + $(this).val() + "?isNew=0&isSave=0").done(function (data) {
                 if (data.Id != undefined) {
@@ -270,32 +252,212 @@
             });
         }
     });
-    $("#txtEventId").change(function () {
+    $("#txtEventId").on("change",function () {
         $("#PickZones").empty();
     });
+    
+/*************************Create Search*************************************/
+    function showBulkSearchWindow() {
 
-   function QuickSearchInit() {
+    }
+    function loadSearchGridData(url) {
+        ajaxRequest("get", url).done(function (data) {
 
-       $("#cbSaveQuickSearch").attr("checked",false);
-       $("#cbSaveQuickSearch").attr('disabled', true);
-       $("#txtEventId").attr('disabled', true);
+            var tData = {};
+            tData.total_count = data.length;
+            tData.pos = 0;
+            tData.data = data;
 
-       var cboQuickSearches =$("#cboQuickSearches");
-       loadComboData(cboQuickSearches, "/api/QuickSearches/", "Name", "Id", '');
-   }
+            grid = $("#table_3");
+            grid.find("tbody").empty();
 
-   function CreateSearchInit() {
-   }
+            $.each(data, function (i, v) {
+                grid.DataTable().row.add([v["Id"], v["Name"], v["ScheduleString"], v["ScanDayBefore"], v["Archived"]]);
+                grid.DataTable().draw();
+            });
 
+        }).fail(function () {
+            alert("Error when loading data!");
+        });
+    }
+    function loadSearchEventsGridData(url) {
+        ajaxRequest("get", url).done(function (data) {
+
+            var tData = {};
+            tData.total_count = data.length;
+            tData.pos = 0;
+            tData.data = data;
+
+            grid = $("#table_4");
+            grid.find("tbody").empty();
+
+            $.each(data, function (i, v) {
+                grid.DataTable().row.add([v["Id"],v["EventId"], v["EventTitle"], v["EventVenue"], v["EventDate"], v["Active"]]);
+                grid.DataTable().draw();
+            });
+           
+        }).fail(function () {
+            alert("Error when loading data!");
+        });
+    }
+    function loadSearches() {
+        var showArchivedSearches = $('#showArchivedSearches').is(':checked');
+        var archived = 0;
+        if (showArchivedSearches)
+            archived = 1;
+      
+        loadSearchGridData("/api/search/?archived=" + archived);
+    }
+   
+    
+    var selected_tableGridId = null;
+    var selected_tableEventGridId = null;
+    $("#table_3 tbody").on("click","tr",function () {
+        var searchId = $(this).find("td:first-child").html();
+        selected_tableId = searchId;
+        selected_tableEventGridId=null;
+        // loadSearchEventsGridData("/api/searchevent/?searchId=" + searchId);
+
+        $("#Name").val($(this).find("td:nth-child(1)").html());
+        $("#Schedule").val($(this).find("td:nth-child(2)").html());
+        $("#ScanDayBefore").val($(this).find("td:nth-child(3)").html());
+      
+    });
+
+    $("#table_4 tbody").on("click", "tr", function () {
+       selected_tableEventGridId =  $(this).find("td:first-child").html();
+    });
+
+   //searchesGrid.attachEvent("onBeforeContextMenu", 
+    $("#btnReload").on("click", function () {
+        loadSearches();
+        selected_tableId = null;
+    });
+
+    $("#btnDeleteSelectedSearches").on("click", function () {
+        if (selected_tableId != null) {          
+            ajaxRequest("delete", 'api/search/' + selected_tableId).done(function (data) {
+                alert("The searchItem has been deleted!");
+                selected_tableId=null;
+                loadSearches();
+            });
+            
+        }
+        else
+           alert("Please select a SearchItem!");
+    });
+
+
+   
+    $("#btnDeleteSearchEvent").on("click",function() {
+        
+        if (selected_tableEventGridId != null) {           
+            ajaxRequest("delete", 'api/searchevent/' + selected_tableEventGridId).done(function (data) {
+                alert("The SearchEvent has been delete!");
+                loadSearchEventsGridData("/api/searchevent/?searchId=" + selected_tableGridId + "&sync=0");
+                selected_tableEventGridId=null;
+            });
+        }
+        else {
+            alert("Please select a event.");
+        }
+    });
+
+    $("#btnAddSearchEvent").on("click",function() {
+        var eventId = Number($("#txtEventId").val());
+        if (eventId == 0 || isNaN(eventId)) {
+            alert("Invalid eventId");
+        }
+        else {
+            var sTemp = { EventId: eventId, SearchId: searchId };
+            ajaxRequest('post', '/api/searchevent/', sTemp).done(function (data) {
+                alert("The event has been saved!");
+                loadSearchEventsGridData("/api/searchevent/?searchId=" + selected_tableGridId);
+            });
+        }
+
+
+    });
+
+    $("#btnScanLink").on("click",function() {
+        showBulkSearchWindow();
+    });
+
+    $("#btnAddSearch").on("click", function () {
+        var sData = {
+            Name: $("#Name").val(),
+            Schedule: $("#Schedule").val(),
+            ScanDayBefore: $("#ScanDayBefore").val(),
+            Id: selected_tableGridId
+        };
+
+        ajaxRequest('post', '/api/search/', sData).done(function (data) {
+            alert("The search has been saved!");
+            loadSearches();
+        });
+    });
+
+    $("#btnEditSearch").on("click", function () {
+        var sData = {
+            Name: $("#Name").val(),
+            Schedule: $("#Schedule").val(),
+            ScanDayBefore: $("#ScanDayBefore").val(),
+            Id: selected_tableGridId
+        };
+
+        ajaxRequest('put', '/api/search/' + selected_tableGridId, sData).done(function (data) {
+            alert("The search has been saved!");
+            loadSearches();
+        });
+    });
+    
+    $("#btnClearSearchTemp").on("click", function () {
+        var sData = {
+            Name: $("#Name").val(),
+            Schedule: $("#Schedule").val(),
+            ScanDayBefore: $("#ScanDayBefore").val(),
+            Id: selected_tableGridId
+        };
+
+        ajaxRequest("delete", 'api/searchevent/0').done(function (data) {
+            alert("The SearchEvent has been empty!");
+            loadSearchEventsGridData("/api/searchevent/?searchId=" + selected_tableGridId + "&sync=0");
+
+            $("#Name").val("");
+            $("#Schedule").val("");
+            $("#ScanDayBefore").val(false);
+        });
+    });
+
+    function CreateSearchInit() {
+        loadSearches();
+    }
+/*********************************Manual Scraping*******************************************/
+    function ManualScrapingInit() {
+        $("#btnScrapingStop").attr("disabled",true);
+        var cboSearches = $("#cboSearches");
+        loadComboData(cboSearches, "/api/search/?archived=0", "Name", "Id", '');
+
+        $("#btnScrapingStop_2").attr("disabled", true);
+        ajaxRequest("get", "/api/scrapingmultisearches/").done(function (data) {
+            $.each(data, function (i, v) {
+                console.log(v);
+                $("#multiSearches").append("<option value='" + v["value"] + "'>" + v["text"] + "</option>")
+            });
+        });
+    }
    switch ($("#currentpage").val()) {
        case "1":
+           console.log("Here is QuickSearch");
            QuickSearchInit();
            break;
        case "2":
+           console.log("Here is CreateSearch");
            CreateSearchInit();
            break;
        case "3":
-           loadManualScrapingCenterTab();
+           console.log("Here is ManualScraping");
+           ManualScrapingInit();
            break;
        case "4":
            loadStubHubDatabaseTab();

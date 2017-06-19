@@ -51,6 +51,10 @@ namespace StubHubScraper.Web
 
             bundles.Add(new StyleBundle("~/bundles/login_css").Include(
                             "~/Content/login.css"));
+
+            bundles.Add(new StyleBundle("~/bundles/custom_css").Include(
+                            "~/Content/custom.css"));
+
             bundles.Add(new ScriptBundle("~/bundles/custom").Include(
                    "~/Scripts/custom.js"));
             bundles.Add(new ScriptBundle("~/bundles/custom_table").Include(

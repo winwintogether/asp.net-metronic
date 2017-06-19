@@ -533,6 +533,7 @@
     <Content Include="Content\imgs\toolbar\views.png" />
     <Content Include="Content\imgs\toolbar\wrench.png" />
     <Content Include="Content\login.css" />
+    <Content Include="Content\custom.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Properties\PublishProfiles\StubHubScraper.pubxml" />

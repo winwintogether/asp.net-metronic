@@ -1,0 +1,8 @@
+﻿body {
+}
+#table_3 tbody tr td:nth-child(1) {
+    display:none;
+}
+#table_4 tbody tr td:nth-child(1) {
+    display:none;
+}
