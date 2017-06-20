@@ -18,7 +18,7 @@
 </head>
 @if (@User.Identity.IsAuthenticated)
 {
-    /*  
+  /*
     @Styles.Render("~/bundles/dhtmlx_css")
     @Scripts.Render("~/bundles/dhtmlx")
     <input id="antiForgeryToken" type="hidden" value="@GetAntiForgeryToken()" />
@@ -31,9 +31,8 @@
             @Html.AntiForgeryToken()
         }
     </body>
-      */
-   
-   
+   */
+
     <input id="antiForgeryToken" type="hidden" value="@GetAntiForgeryToken()" />
     <input id="currentUsername" type="hidden" value="@ViewBag.Username" />
     <input id="adminUser" type="hidden" value="@ViewBag.IsAdmin" />
@@ -45,7 +44,7 @@
        @if (@ViewBag.ReturnUrl == "1")
        {
         @Html.Partial("_QuickSearch")
-       
+
        }
        @if (@ViewBag.ReturnUrl == "2")
        {
@@ -64,11 +63,11 @@
             @Html.Partial("_SearchLog")
         }
     </body>
-   
+
     @Scripts.Render("~/bundles/metronic_js")
     @Scripts.Render("~/bundles/custom_table")
     @Scripts.Render("~/bundles/custom")
-    
+
 }
 else
 {

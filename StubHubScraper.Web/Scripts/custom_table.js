@@ -84,9 +84,9 @@
                 //},
 
                 buttons: [
-                    { extend: 'print', className: 'btn default' },
-                    { extend: 'pdf', className: 'btn default' },
-                    { extend: 'csv', className: 'btn default' }
+                    { extend: 'print', className: 'btn dark btn-outline' },
+                    { extend: 'pdf', className: 'btn green btn-outline' },
+                    { extend: 'csv', className: 'btn purple btn-outline ' }
                 ],
 
                 // setup colreorder extension: http://datatables.net/extensions/colreorder/

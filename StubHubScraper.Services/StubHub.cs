@@ -36,10 +36,10 @@ namespace StubHubScraper.Services
             browser.IgnoreCookies = true;
             browser.AllowAutoRedirect = true;
 
-            //proxy = new WebProxy("209.145.32.88", 8090);
-            //proxy.Credentials = new NetworkCredential() { UserName = "TAUser", Password = "Barbuceanu#1" };
-            ////proxy.UseDefaultCredentials = false;
-            //browser.Proxy = proxy;
+            proxy = new WebProxy("209.145.32.88", 8090);
+            proxy.Credentials = new NetworkCredential() { UserName = "TAUser", Password = "Barbuceanu#1" };
+            //proxy.UseDefaultCredentials = false;
+            browser.Proxy = proxy;
         }
 
 

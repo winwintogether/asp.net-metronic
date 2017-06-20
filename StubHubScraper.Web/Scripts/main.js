@@ -689,6 +689,8 @@ function loadQuickSearchesTab() {
                         loadGridData("/api/quicktickets/?quickId=" + data.Id + "&isNew=0", qsTab1Grid);
                         loadGridData("/api/quicktickets/?quickId=" + data.Id + "&isNew=1", qsTab2Grid);
                         ajaxRequest("get", "/api/chartdata/?quickId=" + data.Id).done(function (data) {
+
+                           
                             var end = 100;
                             if (data != "")
                                 end = data[0].max;
@@ -772,6 +774,8 @@ function loadQuickSearchesTab() {
                 loadComboData(cboQuickSearches, "/api/QuickSearches/", "Name", "Id", '');
 
                 ajaxRequest("get", "/api/chartdata/?quickId=" + data.Id).done(function (data) {
+
+                   
                     var end = 100;
                     if (data != "")
                         end = data[0].max;

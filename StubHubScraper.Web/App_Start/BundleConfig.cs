@@ -70,9 +70,10 @@ namespace StubHubScraper.Web
                 "~/Content/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css",
                 "~/Content/assets/global/css/components-md.min.css",
                 "~/Content/assets/global/css/plugins-md.min.css",
+                "~/Content/assets/global/dist/ladda-themeless.min.css",
                 "~/Content/assets/layouts/layout2/css/layout.min.css",
                 "~/Content/assets/layouts/layout2/css/themes/blue.min.css",
-                "~/Content/assets/layouts/layout2/css/custom.min.css"
+                "~/Content/assets/layouts/layout2/css/custom.min.css"                
                 ));
 
              bundles.Add(new ScriptBundle("~/bundles/metronic_js").Include(
@@ -87,10 +88,16 @@ namespace StubHubScraper.Web
                    "~/Content/assets/global/scripts/datatable.js",
                    "~/Content/assets/global/plugins/datatables/datatables.min.js",
                    "~/Content/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js",
-                //   "~/Content/assets/global/plugins/echarts/echarts.js",
+                   "~/Content/assets/global/dist/spin.min.js",
+                   "~/Content/assets/global/dist/ladda.min.js",
+
+                   "~/Content/assets/global/plugins/amcharts/amcharts/amcharts.js",
+                   "~/Content/assets/global/plugins/amcharts/amcharts/serial.js",
+                   "~/Content/assets/global/plugins/amcharts/amcharts/themes/light.js",
+                   //"~/Content/assets/pages/scripts/table-datatables-rowreorder.min.js",
                    "~/Content/assets/global/scripts/app.min.js",
-               //    "~/Content/assets/pages/scripts/table-datatables-rowreorder.min.js",
-                 //  "~/Content/assets/pages/scripts/mychart.js",
+    
+                    //  "~/Content/assets/pages/scripts/mychart.js",
                    "~/Content/assets/layouts/layout2/scripts/layout.min.js",
                    "~/Content/assets/layouts/layout2/scripts/demo.min.js",
                    "~/Content/assets/layouts/global/scripts/quick-sidebar.min.js"

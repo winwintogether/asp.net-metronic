@@ -116,7 +116,7 @@
         <!-- BEGIN CONTENT BODY -->
         <div class="page-content">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <div class="portlet light bordered">
                         <div class="portlet-title">
                             <div class="caption">
@@ -125,12 +125,12 @@
                             </div>
 
                         </div>
-                        <div class="portlet-body">
+                        <div class="portlet-body" style="height: 400px">
                             <form class="form-horizontal">
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-md-1"></div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-4">
                                             <div class="md-checkbox">
                                                 <input type="checkbox" id="cbDoNewQuickSearch" class="md-check">
                                                 <label for="cbDoNewQuickSearch">
@@ -140,7 +140,7 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-4">
                                             <div class="md-checkbox">
                                                 <input type="checkbox" id="cbSaveQuickSearch" class="md-check">
                                                 <label for="cbSaveQuickSearch">
@@ -155,7 +155,7 @@
                                 <hr>
                                 <div class="row">
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-8">
                                         <!--Begin left-->
                                         <div class="row">
                                             <div class="form-group">
@@ -198,12 +198,12 @@
                                         </div>
                                     </div><!--End Left-->
 
-                                    <div class="col-md-2">
+                                    <div class="col-md-4">
                                         <!--Begin Right -->
                                         <div class="row">
                                             <div class="form-group">
                                                 <div class="col-md-12">
-                                                    <button id="getZones" type="button" class="btn btn-primary">Get Zones</button>
+                                                    <button id="getZones" type="button" class="btn btn-primary ladda-button" data-style="expand-right"><span class="ladda-label">Get Zones</span></button>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -215,26 +215,21 @@
                                             </div>
                                         </div>
                                     </div><!--End Right-->
-
-                                    <div class="col-md-1"></div>
-
-                                    <div class="col-md-5">
-                                        <h4>Guide</h4>
-                                        <hr>
-                                    </div>
+                                                                       
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <hr>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-12">
                                         <div class="row">
                                             <div class="form-group">
-                                                <div class="col-md-6" style="text-align: right">
-                                                    <button id="btnQuickSearch" type="button" class="btn btn-primary">Quick Search</button>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-4">
+                                                    <button id="btnQuickSearch" type="button" class="btn btn-primary ladda-button" data-style="expand-right"><span class="ladda-label">Quick Search</span></button>
                                                 </div>
 
-                                                <div class="col-md-6">
+                                                <div class="col-md-4">
                                                     <button id="btnExportToCSV" type="button" class="btn btn-primary">Export CSV</button>
                                                 </div>
                                             </div>
@@ -246,7 +241,28 @@
                         </div>
                     </div>
                 </div>
-           
+                
+                <div class="col-md-6">
+                    <div class="portlet light ">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="icon-bar-chart font-green-haze"></i>
+                                <span class="caption-subject bold uppercase font-green-haze"> Chart Result</span>
+                                
+                            </div>
+                            <div class="tools">
+                                <a href="javascript:;" class="collapse"> </a>
+                                <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                                <a href="javascript:;" class="reload"> </a>
+                                <a href="javascript:;" class="fullscreen"> </a>
+                                <a href="javascript:;" class="remove"> </a>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div id="chart_1" class="chart" style="height: 400px;"> </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-md-12">
                     <!-- BEGIN EXAMPLE TABLE PORTLET-->
                     <div class="portlet light ">

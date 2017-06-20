@@ -37,6 +37,68 @@
     }
    
 /*****************************Quick Search**********************************/
+    function drawChart(chartData) {
+        var chart = AmCharts.makeChart(
+           "chart_1",
+           {
+               "type": "serial",
+               "theme": "light",
+
+               "fontFamily": 'Open Sans',
+               "color": '#888888',
+
+               "legend": {
+                   "equalWidths": false,
+                   "useGraphSettings": true,
+                   "valueAlign": "left",
+                   "valueWidth": 120
+               },
+               "dataProvider": chartData,
+
+               "graphs": [{
+                   "alphaField": "alpha",
+                   "balloonText": "[[value]] ",
+                   "dashLengthField": "dashLength",
+                   "fillAlphas": 0.7,
+                   "legendValueText": "[[value]]",
+                   "title": "Volume",
+                   "type": "column",
+                   "valueField": "volume",
+                   "valueAxis": "volumeAxis"
+               }, {
+                   "bullet": "square",
+                   "bulletBorderAlpha": 1,
+                   "bulletBorderThickness": 1,
+                   "dashLengthField": "dashLength",
+                   "legendValueText": "[[value]]",
+                   "title": "Moving Average",
+                   "fillAlphas": 0,
+                   "valueField": "average",
+                   "valueAxis": "averageAxis"
+               }],
+               "chartCursor": {
+                   "categoryBalloonDateFormat": "DD",
+                   "cursorAlpha": 0.1,
+                   "cursorColor": "#000000",
+                   "fullWidth": true,
+                   "valueBalloonsEnabled": false,
+                   "zoomable": false
+               },
+               "categoryField": "date",
+               "exportConfig": {
+                   "menuBottom": "20px",
+                   "menuRight": "22px",
+                   "menuItems": [{
+                       "icon": App.getGlobalPluginsPath() + "amcharts/amcharts/images/export.png",
+                       "format": 'png'
+                   }]
+               }
+           });
+
+        $('#chart_1').closest('.portlet').find('.fullscreen').click(function () {
+            chart.invalidateSize();
+        });
+    }
     function loadComboData(combo, url, showKey, valKey, val) {
         ajaxRequest("get", url).done(function (data) {
             if (data.length > 0) {
@@ -44,7 +106,7 @@
                 options.push(["", ""]);
                 $.each(data, function (i, v) {
                     options.push([v[valKey], v[showKey]]);
-                    combo.append("<option value='" + v[valKey] + "'>" + v[showKey] + "</option>")
+                    combo.append("<option value='" + v[valKey] + "'>" + v[showKey] + "</option>");
                 });
 
                 if (options.length > 0)
@@ -63,7 +125,8 @@
             tData.pos = 0;
             tData.data = data;
 
-            grid.find("tbody").empty();
+            grid.DataTable().clear();
+            grid.DataTable().draw();
 
             $.each(data, function (i, v) {
                 grid.DataTable().row.add([v["Zone"], v["Section"], v["Row"], v["Price"], v["Qty"], v["DateSold"]]);
@@ -84,10 +147,15 @@
 
         var cboQuickSearches = $("#cboQuickSearches");
         loadComboData(cboQuickSearches, "/api/QuickSearches/", "Name", "Id", '');
+
+        var chartData = [];
+        drawChart(chartData);
     }
 
     $("#getZones").click(function () {
-       
+        var l = Ladda.create(this);
+        l.start();
+
         var eventId = $("#txtEventId").val();
         if (eventId != "") {
             ajaxRequest("get", "/api/eventzones/?eventId=" + eventId).done(function (data) {
@@ -96,6 +164,8 @@
                     console.log(v);
                     $("#PickZones").append("<option value='" + v["value"] + "'>" + v["text"] + "</option>")
                 });
+
+                l.stop();
             });
         }
     });
@@ -129,8 +199,8 @@
             $("#table_2").DataTable().clear();
             $("#table_2").DataTable().draw();
             $("#PickZones").empty();
-            //   barChart.clearAll();
-            //   barChart.parse([], "json");
+         
+            drawChart([]);
 
         } else {
             $("cbSaveQuickSearch").attr("checked", false);
@@ -155,9 +225,10 @@
         if (lwso) LastWeekSalesOnly = 1;
         var zones = $("#PickZones").val();
         if (isChecked) isSave = 1;
-        ajaxRequest("get", "/api/quicksearches/" + eventId + "?isNew=1&isSave=" + isSave + "&sectionFrom=" + sectionFrom + "&sectionTo=" + sectionTo + "&lastWeekSalesOnly=" + LastWeekSalesOnly + "&zones=" + zones).done(function (data) {
 
-            console.log(JSON.stringify(data));
+        var l = Ladda.create(this);
+        l.start();
+        ajaxRequest("get", "/api/quicksearches/" + eventId + "?isNew=1&isSave=" + isSave + "&sectionFrom=" + sectionFrom + "&sectionTo=" + sectionTo + "&lastWeekSalesOnly=" + LastWeekSalesOnly + "&zones=" + zones).done(function (data) {
 
             $("#txtEventId").val(data.EventId);
             $("#SectionFrom").val(data.SectionFrom);
@@ -179,19 +250,11 @@
             cboQuickSearches.empty();
             loadComboData(cboQuickSearches, "/api/QuickSearches/", "Name", "Id", '');
 
-            /*ajaxRequest("get", "/api/chartdata/?quickId=" + data.Id).done(function (data) {
-                var end = 100;
-                if (data != "")
-                    end = data[0].max;
-                barChart.define("yAxis", {
-                    start: 0,
-                    step: 20,
-                    end: end
-                })
-                barChart.clearAll();
-                barChart.parse(data, "json");
+            ajaxRequest("get", "/api/chartdata/?quickId=" + data.Id).done(function (data) {
+                drawChart(data);
+                l.stop();
             });
-            */
+            
         });
 
     });
@@ -232,19 +295,10 @@
                     loadGridData("/api/quicktickets/?quickId=" + data.Id + "&isNew=0", qsTab1Grid);
                     loadGridData("/api/quicktickets/?quickId=" + data.Id + "&isNew=1", qsTab2Grid);
 
-/*                   ajaxRequest("get", "/api/chartdata/?quickId=" + data.Id).done(function (data) {
-                        var end = 100;
-                        if (data != "")
-                            end = data[0].max;
-                        barChart.define("yAxis", {
-                            start: 0,
-                            step: 20,
-                            end: end
-                        })
-                        barChart.clearAll();
-                        barChart.parse(data, "json");
+                    ajaxRequest("get", "/api/chartdata/?quickId=" + data.Id).done(function (data) {
+                     drawChart(data);
                     });
-*/
+
                 }
                 $("#PickZones").empty();
 
@@ -268,7 +322,8 @@
             tData.data = data;
 
             grid = $("#table_3");
-            grid.find("tbody").empty();
+            grid.DataTable().clear();
+            grid.DataTable().draw();
 
             $.each(data, function (i, v) {
                 grid.DataTable().row.add([v["Id"], v["Name"], v["ScheduleString"], v["ScanDayBefore"], v["Archived"]]);
@@ -288,7 +343,8 @@
             tData.data = data;
 
             grid = $("#table_4");
-            grid.find("tbody").empty();
+            grid.DataTable().clear();
+            grid.DataTable().draw();
 
             $.each(data, function (i, v) {
                 grid.DataTable().row.add([v["Id"],v["EventId"], v["EventTitle"], v["EventVenue"], v["EventDate"], v["Active"]]);
@@ -460,7 +516,7 @@
         }
     });
     
-    $("3btnScrapingStart").on("click", function () {
+    $("#btnScrapingStart").on("click", function () {
         eventIds = $("#eventlist").val();
         $("#btnScrapingStop").attr("disabled",false);
         //   manualScrapingCenter.cells('c').progressOn();
@@ -482,6 +538,7 @@
             alert("Searching stop");
         });
     });
+
     $("#btnDownload").on("click", function () {
         eventIds = $("#eventlist").val();
         if (eventIds != "")
@@ -526,6 +583,9 @@
     function SearchingLogInit() {
 
     }
+
+
+   
 
    switch ($("#currentpage").val()) {
        case "1":
