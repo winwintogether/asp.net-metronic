@@ -401,7 +401,9 @@
                    // { extend: 'pdf', className: 'btn default' },
                    // { extend: 'csv', className: 'btn default' }
                 ],
-
+                columnDefs: [
+                        { "width": "20%", "targets": 0 }
+                ],
                 // setup colreorder extension: http://datatables.net/extensions/colreorder/
                 colReorder: {
                     reorderCallback: function () {

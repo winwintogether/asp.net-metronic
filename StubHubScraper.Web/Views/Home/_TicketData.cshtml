@@ -138,9 +138,9 @@
                                             
                                                 <label class="col-md-2 control-label" for="title">Event Date:</label>
                                                 <div class="col-md-5">
-                                                    <input id="StartDate" type="text" class="form-control input-small input-inline" />
+                                                    <input id="StartDate" type="text" class="form-control input-small input-inline date-picker" />
                                                     <span>To:</span>
-                                                    <input id="EndDate" type="text" class="form-control input-small input-inline" />
+                                                    <input id="EndDate" type="text" class="form-control input-small input-inline date-picker" />
                                                 </div>
                                             </div>    
                                         </div>
@@ -210,11 +210,11 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <button id="btnScrapingStart" type="button" class="btn btn-primary" style="display:block">LookUp Tickets</button>
+                                        <button id="btnLookupTickets" type="button" class="btn btn-primary" style="display:block">LookUp Tickets</button>
                                         <br>
-                                        <button id="btnScrapingStop" type="button" class="btn btn-primary" style="display:block">Export Tickets to CSV</button>
+                                        <button id="btnExportTicketsToCSV" type="button" class="btn btn-primary" style="display:block">Export Tickets to CSV</button>
                                         <br>
-                                        <button id="btnScrapingStop" type="button" class="btn btn-primary" style="display:block">Delete Selected Tickets</button>
+                                        <button id="btnDeleteSelectedTickets" type="button" class="btn btn-primary" style="display:block">Delete Selected Tickets</button>
                                     </div>                                   
                                     
                                 </div>
@@ -253,13 +253,10 @@
                                                         <th> Event ID </th>
                                                         <th> Event Title </th>
                                                         <th> Venue </th>
-                                                        <th> Event Date </th>
-                                                        <th> Zone </th>
-                                                        <th> Section </th>
-                                                        <th> Row </th>
-                                                        <th> Price </th>
-                                                        <th> Qty </th>
-                                                        <th> Soild Date </th>
+                                                        <th> Date </th>
+                                                        <th> Sales </th>
+                                                        <th> Tickets Sold </th>
+                                                        <th> Average Price </th>                                                      
                                                     </tr>
                                                 </thead>
                                                 <tbody></tbody>
@@ -274,6 +271,7 @@
                                             <table class="table table-striped table-bordered table-hover" id="table_6">
                                                 <thead>
                                                     <tr>
+                                                        <th style="display:none"> ID </th>
                                                         <th> Event ID </th>
                                                         <th> Event Title </th>
                                                         <th> Venue </th>

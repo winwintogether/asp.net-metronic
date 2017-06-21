@@ -6,6 +6,9 @@
 #table_4 tbody tr td:nth-child(1) {
     display:none;
 }
+#table_6 tbody tr td:nth-child(1) {
+    display:none;
+}
 .amcharts-chart-div > a{
     display:none !important;
 }

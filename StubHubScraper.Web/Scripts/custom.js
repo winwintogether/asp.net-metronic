@@ -35,6 +35,52 @@
     function failCallback(elem) {
         alert("Connetion error");
     }
+    function loadComboData(combo, url, showKey, valKey, val) {
+        ajaxRequest("get", url).done(function (data) {
+            if (data.length > 0) {
+                var options = [];
+                options.push(["", ""]);
+                $.each(data, function (i, v) {
+                    options.push([v[valKey], v[showKey]]);
+                    combo.append("<option value='" + v[valKey] + "'>" + v[showKey] + "</option>");
+                });
+
+                if (options.length > 0)
+                    combo.val(options[0][0]);
+                if (val != "")
+                    combo.val(val);
+            }
+        }).fail(failCallback);
+    }
+    function loadGridData(url, grid, columnData) {
+        ajaxRequest("get", url).done(function (data) {
+
+            var tData = {};
+            tData.total_count = data.length;
+            tData.pos = 0;
+            tData.data = data;
+
+            grid.DataTable().clear();
+            grid.DataTable().draw();
+
+            $.each(data, function (i, v) {
+
+                console.log(columnData);
+                var row = [];
+                $.each(columnData, function (j, k) {
+
+                    row.push(v[columnData[j]]);
+                });
+
+                grid.DataTable().row.add(row);
+                grid.DataTable().draw();
+            });
+
+
+        }).fail(function () {
+            alert("Error when loading data!");
+        });
+    }
    
 /*****************************Quick Search**********************************/
     function drawChart(chartData) {
@@ -99,45 +145,7 @@
             chart.invalidateSize();
         });
     }
-    function loadComboData(combo, url, showKey, valKey, val) {
-        ajaxRequest("get", url).done(function (data) {
-            if (data.length > 0) {
-                var options = [];
-                options.push(["", ""]);
-                $.each(data, function (i, v) {
-                    options.push([v[valKey], v[showKey]]);
-                    combo.append("<option value='" + v[valKey] + "'>" + v[showKey] + "</option>");
-                });
-
-                if (options.length > 0)
-                    combo.val(options[0][0]);
-                if (val != "")
-                    combo.val(val);
-            }
-        }).fail(failCallback);
-    }
-
-    function loadGridData(url, grid) {
-        ajaxRequest("get", url).done(function (data) {
-
-            var tData = {};
-            tData.total_count = data.length;
-            tData.pos = 0;
-            tData.data = data;
-
-            grid.DataTable().clear();
-            grid.DataTable().draw();
-
-            $.each(data, function (i, v) {
-                grid.DataTable().row.add([v["Zone"], v["Section"], v["Row"], v["Price"], v["Qty"], v["DateSold"]]);
-                grid.DataTable().draw();
-            });
-
-
-        }).fail(function () {
-            alert("Error when loading data!");
-        });
-    }
+    
 
     function QuickSearchInit() {
 
@@ -244,7 +252,9 @@
 
             $("#PickZones").val("");
             var qsTab2Grid = $("#table_2");
-            loadGridData("/api/quicktickets/?quickId=" + data.Id + "&isSave=" + isSave, qsTab2Grid);
+            var columnData = ["Zone","Section","Row","Price","Qty","DateSold"];
+
+            loadGridData("/api/quicktickets/?quickId=" + data.Id + "&isSave=" + isSave, qsTab2Grid, columnData);
 
             var cboQuickSearches = $("#cboQuickSearches");
             cboQuickSearches.empty();
@@ -291,9 +301,10 @@
                     
                     qsTab1Grid = $("#table_1");
                     qsTab2Grid = $("#table_2");
+                    var columnData = ["Zone", "Section", "Row", "Price", "Qty", "DateSold"];
 
-                    loadGridData("/api/quicktickets/?quickId=" + data.Id + "&isNew=0", qsTab1Grid);
-                    loadGridData("/api/quicktickets/?quickId=" + data.Id + "&isNew=1", qsTab2Grid);
+                    loadGridData("/api/quicktickets/?quickId=" + data.Id + "&isNew=0", qsTab1Grid, columnData);
+                    loadGridData("/api/quicktickets/?quickId=" + data.Id + "&isNew=1", qsTab2Grid, columnData);
 
                     ajaxRequest("get", "/api/chartdata/?quickId=" + data.Id).done(function (data) {
                      drawChart(data);
@@ -312,27 +323,6 @@
 /*************************Create Search*************************************/
     function showBulkSearchWindow() {
 
-    }
-    function loadSearchGridData(url) {
-        ajaxRequest("get", url).done(function (data) {
-
-            var tData = {};
-            tData.total_count = data.length;
-            tData.pos = 0;
-            tData.data = data;
-
-            grid = $("#table_3");
-            grid.DataTable().clear();
-            grid.DataTable().draw();
-
-            $.each(data, function (i, v) {
-                grid.DataTable().row.add([v["Id"], v["Name"], v["ScheduleString"], v["ScanDayBefore"], v["Archived"]]);
-                grid.DataTable().draw();
-            });
-
-        }).fail(function () {
-            alert("Error when loading data!");
-        });
     }
     function loadSearchEventsGridData(url) {
         ajaxRequest("get", url).done(function (data) {
@@ -360,8 +350,10 @@
         var archived = 0;
         if (showArchivedSearches)
             archived = 1;
-      
-        loadSearchGridData("/api/search/?archived=" + archived);
+        
+        var grid = $("#table_3");
+        var columnData = ["Id","Name","ScheduleString","ScanDayBefore", "Archived"];
+        loadGridData("/api/search/?archived=" + archived,grid,columnData);
     }
    
     
@@ -370,8 +362,12 @@
     $("#table_3 tbody").on("click","tr",function () {
         var searchId = $(this).find("td:first-child").html();
         selected_tableId = searchId;
-        selected_tableEventGridId=null;
-        // loadSearchEventsGridData("/api/searchevent/?searchId=" + searchId);
+        selected_tableEventGridId = null;
+
+        var grid = $("#table_4");
+        var columnData = ["Id","EventId","EventTitle","EventVenue","EventDate","Active"];
+
+        loadGridData("/api/searchevent/?searchId=" + searchId,grid,columnData);
 
         $("#Name").val($(this).find("td:nth-child(1)").html());
         $("#Schedule").val($(this).find("td:nth-child(2)").html());
@@ -385,16 +381,19 @@
 
    //searchesGrid.attachEvent("onBeforeContextMenu", 
     $("#btnReload").on("click", function () {
+        
         loadSearches();
         selected_tableId = null;
     });
 
     $("#btnDeleteSelectedSearches").on("click", function () {
+       
         if (selected_tableId != null) {          
             ajaxRequest("delete", 'api/search/' + selected_tableId).done(function (data) {
                 alert("The searchItem has been deleted!");
                 selected_tableId=null;
                 loadSearches();
+                l.stop();
             });
             
         }
@@ -406,11 +405,19 @@
    
     $("#btnDeleteSearchEvent").on("click",function() {
         
-        if (selected_tableEventGridId != null) {           
+        if (selected_tableEventGridId != null) {
+            
+
             ajaxRequest("delete", 'api/searchevent/' + selected_tableEventGridId).done(function (data) {
                 alert("The SearchEvent has been delete!");
-                loadSearchEventsGridData("/api/searchevent/?searchId=" + selected_tableGridId + "&sync=0");
-                selected_tableEventGridId=null;
+
+                var grid = $("#table_4");
+                var columnData = ["Id", "EventId", "EventTitle", "EventVenue", "EventDate", "Active"];
+
+                loadGridData("/api/searchevent/?searchId=" + searchId, grid, columnData);
+
+                selected_tableEventGridId = null;
+                              
             });
         }
         else {
@@ -424,10 +431,16 @@
             alert("Invalid eventId");
         }
         else {
+           
             var sTemp = { EventId: eventId, SearchId: searchId };
             ajaxRequest('post', '/api/searchevent/', sTemp).done(function (data) {
                 alert("The event has been saved!");
-                loadSearchEventsGridData("/api/searchevent/?searchId=" + selected_tableGridId);
+               
+                var grid = $("#table_4");
+                var columnData = ["Id", "EventId", "EventTitle", "EventVenue", "EventDate", "Active"];
+
+                loadGridData("/api/searchevent/?searchId=" + searchId, grid, columnData);
+
             });
         }
 
@@ -446,9 +459,11 @@
             Id: selected_tableGridId
         };
 
+       
         ajaxRequest('post', '/api/search/', sData).done(function (data) {
             alert("The search has been saved!");
             loadSearches();
+           
         });
     });
 
@@ -459,10 +474,11 @@
             ScanDayBefore: $("#ScanDayBefore").val(),
             Id: selected_tableGridId
         };
-
+        
         ajaxRequest('put', '/api/search/' + selected_tableGridId, sData).done(function (data) {
             alert("The search has been saved!");
             loadSearches();
+           
         });
     });
     
@@ -474,13 +490,21 @@
             Id: selected_tableGridId
         };
 
+       
+
         ajaxRequest("delete", 'api/searchevent/0').done(function (data) {
             alert("The SearchEvent has been empty!");
-            loadSearchEventsGridData("/api/searchevent/?searchId=" + selected_tableGridId + "&sync=0");
+          
+            var grid = $("#table_4");
+            var columnData = ["Id", "EventId", "EventTitle", "EventVenue", "EventDate", "Active"];
+
+            loadGridData("/api/searchevent/?searchId=" + searchId, grid, columnData);
 
             $("#Name").val("");
             $("#Schedule").val("");
             $("#ScanDayBefore").val(false);
+
+           
         });
     });
 
@@ -502,7 +526,7 @@
         });
     }
 
-    $("#cboSearches").on("click", function () {
+    $("#cboSearches").on("change", function () {
         if ($(this).val() != "") {
             ajaxRequest("get", "/api/scrapingevent/?searchId=" + $(this).val()).done(function (data) {
                 $.each(data, function (i, v) {
@@ -576,12 +600,151 @@
 
 /*******************************Ticket Data*****************************************/
     function TicketDataInit() {
-
+        var searchlist = $("#SearchId");
+        loadComboData(searchlist, "/api/search/?archived=0", "Name", "Id", '');
     }
+
+    $("#SearchId").on("change", function () {
+
+        var eventlist = $("#EventId");
+        if ($(this).val() != "") {
+             eventlist.empty();
+             loadComboData(eventlist, "/api/scrapingevent/?searchId=" + value, "text", "value", '');
+        }
+        else {
+            eventlist.empty();
+        }
+
+    });
+    
+    $("#btnLookupTickets").on("click",function() {
+
+        var searchId = $("#SearchId").val();
+        var eventId = $("#EventId").val();
+        var eventTitle = $("#EventTitle").val();
+        var eventVenue = $("#EventVenue").val();
+        var startDate = $("S#tartDate").val();
+        var endDate = $("#EndDate").val();
+        var zone = $("#Zone").val();
+        var sectionForm = $("#SectionForm").val();
+        var sectionTo = $("#SectionTo").val();
+        var lastWeekSalesOnly = $("#LastWeekSalesOnly").val();
+        var hidePastEvents = $("#HidePastEvents").val();
+        var showArchivedSearches = $("#ShowArchivedSearches").val();
+        if (searchId == "")
+            searchId = 0;
+        if (eventId == "")
+            eventId = 0;
+
+        var sdBtab1Grid = $("#table_5");
+        var sdBtab2Grid = $("#table_6");
+        var columnData1 = ["Id","Title","Venue", "Date","Sales","TicketsCount"," AvgPrice"];
+        var columnData2 = ["Id", "EventId", "EventTitle", "EventVenue", "EventDate", "Zone", "Section", "Row", "Price", "Qty", "DateSold"];
+
+        loadGridData("/api/lookupevents/?searchId=" + searchId + "&eventId=" + eventId
+            + "&title=" + eventTitle + "&venue=" + eventVenue + "&startDate=" + startDate + "&endDate=" + endDate
+            + "&zone=" + zone + "&sectionForm=" + sectionForm + "&sectionTo=" + sectionTo
+            + "&lastWeekSalesOnly=" + lastWeekSalesOnly + "&hidePastEvents=" + hidePastEvents + "&showArchivedSearches=" + showArchivedSearches, sdBtab1Grid,columnData1);
+
+        loadGridData("/api/lookuptickets/?searchId=" + searchId + "&eventId=" + eventId
+            + "&title=" + eventTitle + "&venue=" + eventVenue + "&startDate=" + startDate + "&endDate=" + endDate
+            + "&zone=" + zone + "&sectionForm=" + sectionForm + "&sectionTo=" + sectionTo
+            + "&lastWeekSalesOnly=" + lastWeekSalesOnly + "&hidePastEvents=" + hidePastEvents + "&showArchivedSearches=" + showArchivedSearches, sdBtab2Grid,columnData2);
+
+        ajaxRequest("get", "/api/eventschart/?searchId=" + searchId + "&eventId=" + eventId
+            + "&title=" + eventTitle + "&venue=" + eventVenue + "&startDate=" + startDate + "&endDate=" + endDate
+            + "&zone=" + zone + "&sectionForm=" + sectionForm + "&sectionTo=" + sectionTo
+            + "&lastWeekSalesOnly=" + lastWeekSalesOnly + "&hidePastEvents=" + hidePastEvents + "&showArchivedSearches=" + showArchivedSearches).done(function (data) {
+          
+                /*      var end = 100;
+                if (data != "")
+                    end = data[0].max;
+                barChart.define("yAxis", {
+                    start: 0,
+                    step: 20,
+                    end: end
+                })
+                barChart.clearAll();
+                barChart.parse(data, "json"); */
+
+            });
+           
+    });
+    
+    $("#btnExportTicketsToCSV").on("click",function() {
+    
+        var ids = "";
+        
+        sdBtab1Grid=$("#table_5");
+
+        sdBtab1Grid.column( 0 )
+                   .data()
+                   .each( function ( value, index ) {
+        
+                        ids += value + ",";
+            
+                    });
+       
+        if (ids != "")
+        
+            window.location = "ExportToCSV/LookupTicketsToCSV?ids=" + ids;
+        
+    });
+
+    var selected_TicketId = null;
+    
+    $("#table_6 tbody").on("click","tr",function () {
+     
+        selected_TicketId =$(this).find("td:first-child").html();
+       
+    });
+   
+    $("#btnDeleteSelectedTickets").on("click",function() {
+      
+        if (selected_TicketId != null) {
+            ajaxRequest("delete", 'api/lookuptickets/' + selected_TicketId).done(function (data) {
+                    alert("The ticket has been deleted!");
+
+                    var searchId = $("#SearchId").val();
+                    var eventId = $("#EventId").val();
+                    var eventTitle = $("#EventTitle").val();
+                    var eventVenue = $("#EventVenue").val();
+                    var startDate = $("#StartDate").val();
+                    var endDate = $("#EndDate").val();
+                    var zone = $("#Zone").val();
+                    var sectionForm = $("#SectionForm").val();
+                    var sectionTo = $("#SectionTo").val();
+                    var lastWeekSalesOnly = $("#LastWeekSalesOnly").val();
+                    var hidePastEvents = $("#HidePastEvents").val();
+                    var showArchivedSearches = $("#ShowArchivedSearches").val();
+                    if (searchId == "")
+                        searchId = 0;
+                    if (eventId == "")
+                        eventId = 0;
+
+                    sdBtab2Grid=$("#table_6");
+                    var columnData2 = ["Id", "EventId", "EventTitle", "EventVenue", "EventDate", "Zone", "Section", "Row", "Price", "Qty", "DateSold"];
+
+                    loadGridData("/api/lookuptickets/?searchId=" + searchId + "&eventId=" + eventId
+                        + "&title=" + eventTitle + "&venue=" + eventVenue + "&startDate=" + startDate + "&endDate=" + endDate
+                        + "&zone=" + zone + "&sectionForm=" + sectionForm + "&sectionTo=" + sectionTo
+                        + "&lastWeekSalesOnly=" + lastWeekSalesOnly + "&hidePastEvents=" + hidePastEvents + "&showArchivedSearches=" + showArchivedSearches, sdBtab2Grid,columnData2);
+
+                    selected_TicketId=null;
+
+                });
+            }
+            else
+               alert("Please select a ticket!");
+        
+    });
 
 /*******************************Searching Log*****************************************/
     function SearchingLogInit() {
+        var appLogGrid=$("#table_7");
+        var columnData=["CreatedOnUtc","Message"];
 
+        loadGridData("/api/applog/",appLogGrid,columnData);
     }
 
 
@@ -606,6 +769,6 @@
            break;
        case "5":
            console.log("Here is SearingLog");
-           loadScrapingLogTab();
+           SearchingLogInit();
            break;
    }

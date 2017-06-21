@@ -61,13 +61,21 @@ namespace StubHubScraper.Web
                   "~/Scripts/custom_table.js"));
 
             bundles.Add(new StyleBundle("~/bundles/metronic_css").Include(
-                "~/Content/assets/global/plugins/font-awesome/css/font-awesome.min.css",
+               "~/Content/assets/global/plugins/font-awesome/css/font-awesome.min.css",
                 "~/Content/assets/global/plugins/simple-line-icons/simple-line-icons.min.css",
                 "~/Content/assets/global/plugins/bootstrap/css/bootstrap.min.css",
                 "~/Content/assets/global/plugins/uniform/css/uniform.default.css",
                 "~/Content/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css",
                 "~/Content/assets/global/plugins/datatables/datatables.min.css",
                 "~/Content/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css",
+
+                /*
+                "~/Content/assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css",
+                "~/Content/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css",
+                "~/Content/assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css",
+                "~/Content/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css",
+                */
+
                 "~/Content/assets/global/css/components-md.min.css",
                 "~/Content/assets/global/css/plugins-md.min.css",
                 "~/Content/assets/global/dist/ladda-themeless.min.css",
@@ -77,7 +85,7 @@ namespace StubHubScraper.Web
                 ));
 
              bundles.Add(new ScriptBundle("~/bundles/metronic_js").Include(
-                   "~/Content/assets/global/plugins/jquery.min.js",
+                    "~/Content/assets/global/plugins/jquery.min.js",
                    "~/Content/assets/global/plugins/bootstrap/js/bootstrap.min.js",
                    "~/Content/assets/global/plugins/js.cookie.min.js",
                    "~/Content/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js",
@@ -88,6 +96,15 @@ namespace StubHubScraper.Web
                    "~/Content/assets/global/scripts/datatable.js",
                    "~/Content/assets/global/plugins/datatables/datatables.min.js",
                    "~/Content/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js",
+
+
+                 /*  "~/Content/assets/global/plugins/bootstrap-daterangepicker/moment.min.js",
+                   "~/Content/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js",
+                   "~/Content/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js",
+                   "~/Content/assets/global/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js",
+                   "~/Content/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js",
+                */
+
                    "~/Content/assets/global/dist/spin.min.js",
                    "~/Content/assets/global/dist/ladda.min.js",
 

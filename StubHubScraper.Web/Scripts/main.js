@@ -1592,6 +1592,7 @@ function loadStubHubDatabaseTab() {
             }
         }
     });
+
     sEventForm.attachEvent("onButtonClick", function (name) {
         if (name == "btnLookupTickets") {
             //var sEventData = sEventForm.getFormData();
