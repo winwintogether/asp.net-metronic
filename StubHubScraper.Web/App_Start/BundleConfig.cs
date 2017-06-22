@@ -69,16 +69,13 @@ namespace StubHubScraper.Web
                 "~/Content/assets/global/plugins/datatables/datatables.min.css",
                 "~/Content/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css",
 
-                /*
+               
                 "~/Content/assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css",
                 "~/Content/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css",
-                "~/Content/assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css",
-                "~/Content/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css",
-                */
+               
 
                 "~/Content/assets/global/css/components-md.min.css",
                 "~/Content/assets/global/css/plugins-md.min.css",
-                "~/Content/assets/global/dist/ladda-themeless.min.css",
                 "~/Content/assets/layouts/layout2/css/layout.min.css",
                 "~/Content/assets/layouts/layout2/css/themes/blue.min.css",
                 "~/Content/assets/layouts/layout2/css/custom.min.css"                
@@ -97,24 +94,17 @@ namespace StubHubScraper.Web
                    "~/Content/assets/global/plugins/datatables/datatables.min.js",
                    "~/Content/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js",
 
-
-                 /*  "~/Content/assets/global/plugins/bootstrap-daterangepicker/moment.min.js",
+                   "~/Content/assets/global/plugins/bootstrap-daterangepicker/moment.min.js",
                    "~/Content/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js",
                    "~/Content/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js",
-                   "~/Content/assets/global/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js",
-                   "~/Content/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js",
-                */
-
-                   "~/Content/assets/global/dist/spin.min.js",
-                   "~/Content/assets/global/dist/ladda.min.js",
-
+                  
+               
                    "~/Content/assets/global/plugins/amcharts/amcharts/amcharts.js",
                    "~/Content/assets/global/plugins/amcharts/amcharts/serial.js",
                    "~/Content/assets/global/plugins/amcharts/amcharts/themes/light.js",
                    //"~/Content/assets/pages/scripts/table-datatables-rowreorder.min.js",
                    "~/Content/assets/global/scripts/app.min.js",
     
-                    //  "~/Content/assets/pages/scripts/mychart.js",
                    "~/Content/assets/layouts/layout2/scripts/layout.min.js",
                    "~/Content/assets/layouts/layout2/scripts/demo.min.js",
                    "~/Content/assets/layouts/global/scripts/quick-sidebar.min.js"

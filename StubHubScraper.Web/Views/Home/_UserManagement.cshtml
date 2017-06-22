@@ -5,7 +5,7 @@
         <!-- BEGIN LOGO -->
         <div class="page-logo">
             <a href="#">
-               <img src="Content/assets/layouts/layout2/img/logo-default.png" alt="logo" class="logo-default" />
+                <img src="Content/assets/layouts/layout2/img/logo-default.png" alt="logo" class="logo-default" />
 
             </a>
             <div class="menu-toggler sidebar-toggler">
@@ -25,12 +25,12 @@
                     <li class="dropdown dropdown-user">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                             <img alt="" class="img-circle" src="Content/assets/layouts/layout2/img/avatar3_small.jpg" />
-                            <span class="username username-hide-on-mobile"> Test@Test.com </span>
+                            <span class="username username-hide-on-mobile"> @ViewBag.Username </span>
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-default">
                             <li>
-                                <a href="#">
+                                <a href=@Url.Action("Index", "Home", new { ReturnUrl = "6" })>
                                     <i class="icon-user"></i>Management Users
                                 </a>
                             </li>
@@ -42,7 +42,7 @@
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                     <li class="dropdown dropdown-extended quick-sidebar-toggler">
                         <span class="sr-only">Toggle Quick Sidebar</span>
-                        <i class="icon-logout"></i>
+                        <i class="icon-logout" id="logout"></i>
                     </li>
                     <!-- END QUICK SIDEBAR TOGGLER -->
                 </ul>
@@ -67,7 +67,8 @@
                     <a href=@Url.Action("Index", "Home", new { ReturnUrl = "1" }) class="nav-link nav-toggle">
                         <i class="icon-home"></i>
                         <span class="title">Quick Search</span>
-                        <span class="arrow"></span>
+                        <span class="selected"></span>
+                        <span class="arrow open"></span>
                     </a>
                 </li>
 
@@ -96,12 +97,11 @@
                     </a>
                 </li>
 
-                <li class="nav-item active open">
+                <li class="nav-item">
                     <a href=@Url.Action("Index", "Home", new { ReturnUrl = "5" }) class="nav-link nav-toggle">
                         <i class="icon-home"></i>
                         <span class="title">Search Log</span>
-                        <span class="selected"></span>
-                        <span class="arrow open"></span>
+                        <span class="arrow"></span>
                     </a>
                 </li>
 
@@ -116,58 +116,7 @@
         <!-- BEGIN CONTENT BODY -->
         <div class="page-content">
             <div class="row">
-                <div class="col-md-12">
-                    <!-- BEGIN EXAMPLE TABLE PORTLET-->
-                    <div class="portlet light ">
-                        <div class="portlet-title">
-                            <div class="caption font-dark">
-                                <span>
-                                    Application Log
-                                </span>
-                            </div>
-
-                        </div>
-                        <div class="portlet-body">
-                           <table class="table table-striped table-bordered table-hover" id="table_7">
-                               <thead>
-                                   <tr>
-                                       <th> Date/Time </th>
-                                       <th> Message</th>                                       
-                                   </tr>
-                                </thead>
-                                <tbody></tbody>
-                             </table>
-                         </div>
-                    </div>
-                    <!-- END EXAMPLE TABLE PORTLET-->
-                </div>
-                <div class="col-md-12">
-                    <!-- BEGIN EXAMPLE TABLE PORTLET-->
-                    <div class="portlet light ">
-                        <div class="portlet-title">
-                            <div class="caption font-dark">
-                                <span>
-                                    Automatic Searching Progress
-                                </span>
-                            </div>
-
-                        </div>
-                        <div class="portlet-body">
-                            <table class="table table-striped table-bordered table-hover" id="table_8">
-                                <thead>
-                                    <tr>
-                                        <th> Date/Time </th>
-                                        <th> Search </th>
-                                        <th> Step </th>
-                                        <th> Zone </th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <!-- END EXAMPLE TABLE PORTLET-->
-                </div>
+             
             </div>
         </div>
         <!-- END CONTENT BODY -->

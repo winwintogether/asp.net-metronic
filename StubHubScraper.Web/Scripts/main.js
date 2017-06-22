@@ -92,7 +92,7 @@ function showUsersWindow() {
         if (stage == 2) {
             if (nValue != oValue) {
                 var user = { Id: usersGrid.cells(rId, 0).getValue() };
-               
+
                 user.UserName = usersGrid.cells(rId, 1).getValue();
                 user.Password = usersGrid.cells(rId, 2).getValue();
                 user.IsAdmin = usersGrid.cells(rId, 3).getValue() == 1 ? "true" : "false";
@@ -265,7 +265,7 @@ function loadUsers() {
         alert("Error when loading users!");
     });
 }
-function loadGridData(url,grid) {
+function loadGridData(url, grid) {
     ajaxRequest("get", url).done(function (data) {
 
         var tData = {};
@@ -389,7 +389,7 @@ function showBulkSearchWindow() {
             }
             ajaxRequest('post', '/api/bulksearch/?searchId=' + searchId + '&ids=' + ids).done(function (data) {
                 dhtmlx.alert("Save successful!");
-                loadGridData("/api/searchevent/?searchId=" + searchId,searchEventsGrid);
+                loadGridData("/api/searchevent/?searchId=" + searchId, searchEventsGrid);
                 searchWindow.close();
             });
         }
@@ -690,7 +690,7 @@ function loadQuickSearchesTab() {
                         loadGridData("/api/quicktickets/?quickId=" + data.Id + "&isNew=1", qsTab2Grid);
                         ajaxRequest("get", "/api/chartdata/?quickId=" + data.Id).done(function (data) {
 
-                           
+
                             var end = 100;
                             if (data != "")
                                 end = data[0].max;
@@ -775,7 +775,7 @@ function loadQuickSearchesTab() {
 
                 ajaxRequest("get", "/api/chartdata/?quickId=" + data.Id).done(function (data) {
 
-                   
+
                     var end = 100;
                     if (data != "")
                         end = data[0].max;
@@ -1071,7 +1071,7 @@ function loadSearchManagementTab() {
                 var sTemp = { EventId: eventId, SearchId: searchId };
                 ajaxRequest('post', '/api/searchevent/', sTemp).done(function (data) {
                     dhtmlx.message("The event has been saved!");
-                    loadGridData("/api/searchevent/?searchId=" + searchId,searchEventsGrid);
+                    loadGridData("/api/searchevent/?searchId=" + searchId, searchEventsGrid);
                 });
             }
 
@@ -1170,7 +1170,7 @@ function loadSearchManagementTab() {
         if (name == "btnClearSearchTemp") {
             ajaxRequest("delete", 'api/searchevent/0').done(function (data) {
                 dhtmlx.message("The SearchEvent has been empty!");
-                loadGridData("/api/searchevent/?searchId=" + searchId + "&sync=0",searchEventsGrid);
+                loadGridData("/api/searchevent/?searchId=" + searchId + "&sync=0", searchEventsGrid);
                 smBBform.setFormData({
                     Name: "",
                     Schedule: "",
@@ -1627,17 +1627,17 @@ function loadStubHubDatabaseTab() {
                 + "&title=" + eventTitle + "&venue=" + eventVenue + "&startDate=" + startDate + "&endDate=" + endDate
                 + "&zone=" + zone + "&sectionForm=" + sectionForm + "&sectionTo=" + sectionTo
                 + "&lastWeekSalesOnly=" + lastWeekSalesOnly + "&hidePastEvents=" + hidePastEvents + "&showArchivedSearches=" + showArchivedSearches).done(function (data) {
-                var end = 100;
-                if (data != "")
-                    end = data[0].max;
-                barChart.define("yAxis", {
-                    start: 0,
-                    step: 20,
-                    end: end
-                })
-                barChart.clearAll();
-                barChart.parse(data, "json");
-            });
+                    var end = 100;
+                    if (data != "")
+                        end = data[0].max;
+                    barChart.define("yAxis", {
+                        start: 0,
+                        step: 20,
+                        end: end
+                    })
+                    barChart.clearAll();
+                    barChart.parse(data, "json");
+                });
 
         }
         if (name == "btnExportTicketsToCSV") {
@@ -1771,7 +1771,7 @@ function loadScrapingLogTab() {
     //appLogGrid.enablePaging(true, 150, 3, "pagingArea");
     appLogGrid.setPagingSkin("toolbar");
     appLogGrid.init();
-    loadGridData("/api/applog/",appLogGrid);
+    loadGridData("/api/applog/", appLogGrid);
 
     var autoScrapingLogGrid = scrapingLog.cells("b").attachGrid();
     autoScrapingLogGrid.setIconsPath(imgPath.grid);
