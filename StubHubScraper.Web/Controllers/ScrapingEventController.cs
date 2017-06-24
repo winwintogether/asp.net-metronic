@@ -113,8 +113,12 @@ namespace StubHubScraper.Web.Controllers
                 _logger.InsertLog(new Log { UserId = user.Id, LogLevelId = 40, Message = ex.Message, CreatedOnUtc = DateTime.Now });
                 return Request.CreateResponse(HttpStatusCode.InternalServerError);
             }
+            var model = new { result = "success" };
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, model);
 
-            return Request.CreateResponse(HttpStatusCode.OK);
+            //return Request.CreateResponse(HttpStatusCode.OK);
+            return response;
+
         }
     }
 

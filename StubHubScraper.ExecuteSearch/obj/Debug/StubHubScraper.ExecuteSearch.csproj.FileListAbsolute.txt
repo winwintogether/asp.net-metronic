@@ -108,3 +108,9 @@ D:\metronic\WebStubhub\StubHubScraper.ExecuteSearch\bin\Debug\ScrapySharp.Core.p
 D:\metronic\WebStubhub\StubHubScraper.ExecuteSearch\bin\Debug\ScrapySharp.Core.xml
 D:\metronic\WebStubhub\StubHubScraper.ExecuteSearch\bin\Debug\FSharp.Core.xml
 D:\metronic\WebStubhub\StubHubScraper.ExecuteSearch\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\Metronic\WebStubhub\StubHubScraper.ExecuteSearch\bin\Debug\System.Web.Http.dll
+D:\Metronic\WebStubhub\StubHubScraper.ExecuteSearch\bin\Debug\System.Net.Http.Formatting.dll
+D:\Metronic\WebStubhub\StubHubScraper.ExecuteSearch\bin\Debug\System.Web.Http.xml
+D:\Metronic\WebStubhub\StubHubScraper.ExecuteSearch\bin\Debug\System.Net.Http.Formatting.xml
+D:\Metronic\WebStubhub\StubHubScraper.ExecuteSearch\bin\Debug\zh-Hans\System.Web.Http.resources.dll
+D:\Metronic\WebStubhub\StubHubScraper.ExecuteSearch\bin\Debug\zh-Hans\System.Net.Http.Formatting.resources.dll

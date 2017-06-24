@@ -25,12 +25,12 @@
                     <li class="dropdown dropdown-user">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                             <img alt="" class="img-circle" src="Content/assets/layouts/layout2/img/avatar3_small.jpg" />
-                            <span class="username username-hide-on-mobile"> Test@Test.com </span>
+                            <span class="username username-hide-on-mobile"> @ViewBag.Username </span>
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-default">
                             <li>
-                                <a href="#">
+                                <a href=@Url.Action("Index", "Home", new { ReturnUrl = "6" })>
                                     <i class="icon-user"></i>Management Users
                                 </a>
                             </li>
@@ -42,7 +42,7 @@
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                     <li class="dropdown dropdown-extended quick-sidebar-toggler">
                         <span class="sr-only">Toggle Quick Sidebar</span>
-                        <i class="icon-logout"></i>
+                        <i class="icon-logout" id="logout"></i>
                     </li>
                     <!-- END QUICK SIDEBAR TOGGLER -->
                 </ul>
@@ -155,8 +155,8 @@
                               <div class="col-md-4">
                                     <form class="form-horizontal">
                                         <div class="row" style="height:100px;">
-                                            <button id="btnReload" type="button" class="btn btn-primary ladda-button" data-style="expand-right"><span class="ladda-label">Reload</span></button> 
-                                            <button id="btnDeleteSelectedSearches" type="button" class="btn btn-primary ladda-button" data-style="expand-right"><span class="ladda-label">Delete Selected Searches</span></button> 
+                                            <button id="btnReload" type="button" class="btn btn-primary">Reload</button> 
+                                            <button id="btnDeleteSelectedSearches" type="button" class="btn btn-primary">Delete Selected Searches</button> 
                                         </div>
                                      </form>
                                </div>
@@ -181,16 +181,16 @@
                                <div class="col-md-8">
                                    <h4>Search Events</h4>
                                    <div class="row">
-                                       <div class="col-md-1"><button id="btnDeleteSearchEvent" type="button" class="btn btn-primary ladda-button" data-style="expand-right"><span class="ladda-label">Delete</span></button></div>
+                                       <div class="col-md-1"><button id="btnDeleteSearchEvent" type="button" class="btn btn-primary">Delete</button></div>
                                        <div class="col-md-3">
                                            <div class="input-group input-medium">
                                                <input id="txtEventId" type="text" class="form-control">
                                                <span class="input-group-btn">
-                                                   <button  type="button" id="btnAddSearchEvent" class="btn blue ladda-button" data-style="expand-right"><span class="ladda-label">Add</span></button>
+                                                   <button  type="button" id="btnAddSearchEvent" class="btn blue">Add</button>
                                                </span>
                                            </div>
                                         </div>
-                                       <div class="col-md-2"><button id="btnScanLink" type="button" class="btn btn-primary ladda-button" data-style="expand-right"><span class="ladda-label">Search Events</span></button></div>
+                                       <div class="col-md-2"><button id="btnScanLink" type="button" class="btn btn-primary">Search Events</button></div>
                                    </div>
                                    <div class="row">
                                        <div class="col-md-12">
@@ -241,11 +241,11 @@
                                        </div>
                                        <div class="col-md-6" style="text-align: left">
                                            <br>
-                                           <button id="btnAddSearch" type="button"  style="display:block" class="btn btn-primary ladda-button" data-style="expand-right"><span class="ladda-label">Add Search</span></button>
+                                           <button id="btnAddSearch" type="button"  style="display:block" class="btn btn-primary">Add Search</button>
                                            <br>
-                                           <button id="btnEditSearch" type="button"  style="display:block" class="btn btn-primary ladda-button" data-style="expand-right"><span class="ladda-label">Edit Search</span></button>
+                                           <button id="btnEditSearch" type="button"  style="display:block" class="btn btn-primary">Edit Search</button>
                                            <br>
-                                           <button id="btnClearSearchTemp" type="button" style="display:block" class="btn btn-primary ladda-button" data-style="expand-right"><span class="ladda-label">Clear Search</span></button>
+                                           <button id="btnClearSearchTemp" type="button" style="display:block" class="btn btn-primary">Clear Search</button>
                                        </div>
                                    </div>
                                </div>

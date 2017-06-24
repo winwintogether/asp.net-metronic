@@ -33,6 +33,7 @@ namespace StubHubScraper.Web
                         ));
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
+                     
 
             bundles.Add(new ScriptBundle("~/bundles/dateformat").Include(
                         "~/Scripts/dateFormat.js"));
@@ -82,7 +83,7 @@ namespace StubHubScraper.Web
                 ));
 
              bundles.Add(new ScriptBundle("~/bundles/metronic_js").Include(
-                    "~/Content/assets/global/plugins/jquery.min.js",
+                   "~/Content/assets/global/plugins/jquery.min.js",
                    "~/Content/assets/global/plugins/bootstrap/js/bootstrap.min.js",
                    "~/Content/assets/global/plugins/js.cookie.min.js",
                    "~/Content/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js",
@@ -97,12 +98,13 @@ namespace StubHubScraper.Web
                    "~/Content/assets/global/plugins/bootstrap-daterangepicker/moment.min.js",
                    "~/Content/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js",
                    "~/Content/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js",
-                  
-               
+
+                   "~/Content/assets/global/plugins/jquery-ui/jquery-ui.min.js",
+
                    "~/Content/assets/global/plugins/amcharts/amcharts/amcharts.js",
                    "~/Content/assets/global/plugins/amcharts/amcharts/serial.js",
                    "~/Content/assets/global/plugins/amcharts/amcharts/themes/light.js",
-                   //"~/Content/assets/pages/scripts/table-datatables-rowreorder.min.js",
+                   
                    "~/Content/assets/global/scripts/app.min.js",
     
                    "~/Content/assets/layouts/layout2/scripts/layout.min.js",

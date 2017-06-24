@@ -9,6 +9,9 @@
 #table_6 tbody tr td:nth-child(1) {
     display:none;
 }
+#table_9 tbody tr td:nth-child(1) {
+    display:none;
+}
 .amcharts-chart-div > a{
     display:none !important;
 }
@@ -39,7 +42,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.1);
 }
 
 /* :not(:required) hides these rules from IE9 and below */

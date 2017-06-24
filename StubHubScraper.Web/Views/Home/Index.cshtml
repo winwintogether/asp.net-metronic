@@ -13,12 +13,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ticket Statistics</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+   
+</head>
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/dateformat")
-</head>
+
 @if (@User.Identity.IsAuthenticated)
-{
-    /*
+{ /*
+     
       @Styles.Render("~/bundles/dhtmlx_css")
       @Scripts.Render("~/bundles/dhtmlx")
       <input id="antiForgeryToken" type="hidden" value="@GetAntiForgeryToken()" />
@@ -31,56 +34,57 @@
               @Html.AntiForgeryToken()
           }
       </body>
-  */
+   */
+   
+         <input id="antiForgeryToken" type="hidden" value="@GetAntiForgeryToken()" />
+         <input id="currentUsername" type="hidden" value="@ViewBag.Username" />
+         <input id="adminUser" type="hidden" value="@ViewBag.IsAdmin" />
+         <input id="userId" type="hidden" value="@ViewBag.UserId" />
+         <input id="currentpage" type="hidden" value="@ViewBag.ReturnUrl"/>
+         @Styles.Render("~/bundles/metronic_css")
+         @Styles.Render("~/bundles/custom_css")
+         <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-md">
+             <div id="loading"></div>
 
-     <input id="antiForgeryToken" type="hidden" value="@GetAntiForgeryToken()" />
-     <input id="currentUsername" type="hidden" value="@ViewBag.Username" />
-     <input id="adminUser" type="hidden" value="@ViewBag.IsAdmin" />
-     <input id="userId" type="hidden" value="@ViewBag.UserId" />
-     <input id="currentpage" type="hidden" value="@ViewBag.ReturnUrl"/>
-     @Styles.Render("~/bundles/metronic_css")
-     @Styles.Render("~/bundles/custom_css")
-     <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-md">
-         <div id="loading"></div>
+             @using (Html.BeginForm("LogOff", "User", new { area = "" }, FormMethod.Post, new { id = "logoutForm" }))
+             {
+                 @Html.AntiForgeryToken()
+             }
+            @if (@ViewBag.ReturnUrl == "1")
+            {
+             @Html.Partial("_QuickSearch")
 
-         @using (Html.BeginForm("LogOff", "User", new { area = "" }, FormMethod.Post, new { id = "logoutForm" }))
-         {
-             @Html.AntiForgeryToken()
-         }
-        @if (@ViewBag.ReturnUrl == "1")
-        {
-         @Html.Partial("_QuickSearch")
+            }
+            @if (@ViewBag.ReturnUrl == "2")
+            {
+             @Html.Partial("_CreateSearch")
+            }
+             @if (@ViewBag.ReturnUrl == "3")
+             {
+                 @Html.Partial("_ExecuteSearch")
+             }
+             @if (@ViewBag.ReturnUrl == "4")
+             {
+                 @Html.Partial("_TicketData")
+             }
+             @if (@ViewBag.ReturnUrl == "5")
+             {
+                 @Html.Partial("_SearchLog")
+             }
+             @if (@ViewBag.ReturnUrl == "6")
+             {
+                @Html.Partial("_UserManagement")
+             }   
+         </body>
 
-        }
-        @if (@ViewBag.ReturnUrl == "2")
-        {
-         @Html.Partial("_CreateSearch")
-        }
-         @if (@ViewBag.ReturnUrl == "3")
-         {
-             @Html.Partial("_ExecuteSearch")
-         }
-         @if (@ViewBag.ReturnUrl == "4")
-         {
-             @Html.Partial("_TicketData")
-         }
-         @if (@ViewBag.ReturnUrl == "5")
-         {
-             @Html.Partial("_SearchLog")
-         }
-         @if (@ViewBag.ReturnUrl == "6")
-         {
-            @Html.Partial("_UserManagement")
-         }   
-     </body>
+         @Scripts.Render("~/bundles/metronic_js")
+         @Scripts.Render("~/bundles/custom_table")
+         @Scripts.Render("~/bundles/custom")
 
-     @Scripts.Render("~/bundles/metronic_js")
-     @Scripts.Render("~/bundles/custom_table")
-     @Scripts.Render("~/bundles/custom")
-     
 }
 else
-{
+{  
+
     @Scripts.Render("~/bundles/ajaxlogin")
     @Scripts.Render("~/bundles/bootstrap")
     @Styles.Render("~/bundles/bootstrap_css")

@@ -116,7 +116,181 @@
         <!-- BEGIN CONTENT BODY -->
         <div class="page-content">
             <div class="row">
-             
+                <div class="col-md-12">
+                    <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                    <div class="portlet light ">
+                        <div class="portlet-title">
+                            <div class="caption font-dark">
+                                <span>
+                                   Users Table
+                                </span>
+                               
+                                 <a id="btnnewuser" class="btn btn-small green" style="margin-left:20px" data-toggle="modal" href="#new_user">
+                                    New
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <table class="table table-striped table-bordered table-hover" id="table_9">
+                                <thead>
+                                    <tr>
+                                        <th style="display:none">Id</th>
+                                        <th>UserName</th>
+                                        <th>Password</th>
+                                        <th>IsAdmin</th>
+                                        <th>API UserName</th>
+                                        <th>API Password</th>
+                                        <th>Environment</th>
+                                        <th>ConsumerKey</th>
+                                        <th>ConsumerSecret</th>
+                                        <th>Application Token</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- END EXAMPLE TABLE PORTLET-->
+                </div>
+              
+                <div class="modal fade" id="new_user" tabindex="-1" role="basic" aria-hidden="true">
+                   <div class="modal-dialog">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                               <h4 class="modal-title">Create New User</h4>
+                          </div>
+                          <div class="modal-body">
+                              <form action="#" id="newForm" name="newForm" class="form-horizontal">
+                                  <div class="form-body">
+                                      <div class="alert alert-danger display-hide">
+                                          <button class="close" data-close="alert"></button> You have some form errors. Please check below.
+                                      </div>
+                                      <div class="alert alert-success display-hide">
+                                          <button class="close" data-close="alert"></button> Your form validation is successful!
+                                      </div>
+                                     
+                                      <div class="form-group">
+                                          <label class="control-label col-md-4">
+                                              UserName
+                                              <span class="required"> * </span>
+                                          </label>
+                                          <div class="col-md-6">
+                                              <div class="input-icon right">
+                                                  <i class="fa"></i>
+                                                  <input id="username" type="email" class="form-control" name="UserName" required/>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="control-label col-md-4">
+                                              Password
+                                              <span class="required"> * </span>
+                                          </label>
+                                          <div class="col-md-6">
+                                              <div class="input-icon right">
+                                                  <i class="fa"></i>
+                                                  <input id="password" type="password" class="form-control" name="Password" />
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="control-label col-md-4">
+                                              isAdmin
+                                              <span class="required">  </span>
+                                          </label>
+                                          <div class="col-md-6">
+                                              <div class="input-icon right">
+                                                  <i class="fa"></i>
+                                                  <input id="isadmin" type="checkbox" class="form-control" name="isAdmin" />
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="control-label col-md-4">
+                                              API UserName
+                                              <span class="required"> * </span>
+                                          </label>
+                                          <div class="col-md-6">
+                                              <div class="input-icon right">
+                                                  <i class="fa"></i>
+                                                  <input id="apiusername" type="email" class="form-control" name="APIUserName" />
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="control-label col-md-4">
+                                              API Password
+                                              <span class="required"> * </span>
+                                          </label>
+                                          <div class="col-md-6">
+                                              <div class="input-icon right">
+                                                  <i class="fa"></i>
+                                                  <input id="apipassword" type="text" class="form-control" name="APIPassword" />
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="control-label col-md-4">
+                                             Environment
+                                              <span class="required"> * </span>
+                                          </label>
+                                          <div class="col-md-6">
+                                              <div class="input-icon right">
+                                                  <i class="fa"></i>
+                                                  <input id="environment" type="text" class="form-control" name="Environment" />
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="control-label col-md-4">
+                                              ConsumerKey
+                                              <span class="required"> * </span>
+                                          </label>
+                                          <div class="col-md-6">
+                                              <div class="input-icon right">
+                                                  <i class="fa"></i>
+                                                  <input id="consumerkey" type="text" class="form-control" name="ConsumerKey" />
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="control-label col-md-4">
+                                              ConsumerSecretKey
+                                              <span class="required"> * </span>
+                                          </label>
+                                          <div class="col-md-6">
+                                              <div class="input-icon right">
+                                                  <i class="fa"></i>
+                                                  <input id="consumersecretkey" type="text" class="form-control" name="ConsumerSecretKey" />
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="control-label col-md-4">
+                                              ApplicationToken
+                                              <span class="required"> * </span>
+                                          </label>
+                                          <div class="col-md-6">
+                                              <div class="input-icon right">
+                                                  <i class="fa"></i>
+                                                  <input id="applicationtoken" type="text" class="form-control" name="ApplicationToken" />
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </form>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn dark btn-outline" data-dismiss="modal">Close</button>
+                              <button id="btnCreateuser" type="button" class="btn green">Create</button>
+                          </div>
+                      </div>
+                            <!-- /.modal-content -->
+                    </div>
+                        <!-- /.modal-dialog -->
+                </div>
             </div>
         </div>
         <!-- END CONTENT BODY -->

@@ -252,6 +252,9 @@ function loadUsers() {
         userData.data = data;
 
         usersGrid.clearAll();
+        
+        console.log(userData);
+
         usersGrid.parse(userData, "js");
 
         usersWindow.progressOff();
@@ -1282,6 +1285,8 @@ function loadManualScrapingCenterTab() {
             scrapingSearchesform.enableItem("btnScrapingStop");
             manualScrapingCenter.cells('c').progressOn();
             if (eventIds != "") {
+
+                console.log(eventIds);
                 ajaxRequest("get", "/api/scrapingevent/?ids=" + eventIds).done(function (data) {
                     manualScrapingCenter.cells('c').progressOff();
                     dhtmlx.alert("Searching complete");
