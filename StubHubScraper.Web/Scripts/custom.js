@@ -402,9 +402,7 @@
 
     /*************************Create Search******************************************/
 
-    function showBulkSearchWindow() {
-
-    }
+  
 
     function loadSearches() {
 
@@ -515,7 +513,7 @@
 
     $("#btnScanLink").on("click", function () {
 
-        showBulkSearchWindow();
+        
 
     });
 
@@ -577,6 +575,79 @@
         });
     });
 
+    $("#btnSearchEvent").on("click", function () {
+        var eventTitle = $("#txtEventTitle").val();
+        var venue = $("#txtVenue").val();
+
+        InitLoad(3);
+        ajaxRequest("delete", 'api/bulksearch/0').done(function (data) {
+
+            var eventsGrid = $("#bulkeventtable");
+            var columnData = ["Scanned", "EventId", "EventTitle", "EventVenue", "EventDate"];
+
+            var id_of_setinterval = setInterval(function () {
+                loadGridData("/api/bulksearch", eventsGrid,columnData);
+            }, 10000);
+
+            $.ajax({
+                url: "/api/bulksearch?title=" + eventTitle + "&venue=" + venue,
+                type: "GET",
+                success: function (data, textStatus, jqXHR) {
+                    loadGridData("/api/bulksearch", eventsGrid, columnData);
+                   
+                    alert("Search complete!");
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    LoadingOff()
+                    if (jqXHR.responseJSON != undefined) {
+                        alert(jqXHR.responseJSON.errors[0].message);
+                    }
+                },
+                complete: function (XMLHttpRequest, status) {
+                    LoadingOff()
+                    clearInterval(id_of_setinterval);
+                    if (status == 'timeout') {
+                        //ajaxTimeoutTest.abort();
+                        alert("timeout");
+                    }
+                }
+
+            });
+        });
+
+    });
+
+    $("#btnSearchSave").on("click", function () {
+        var searchId = selected_tableId;
+        var ids = "";
+
+        /*
+        eventsGrid.forEachRow(function (id) {
+
+            var isChecked = eventsGrid.cells(id, 0).getValue();
+
+            if (isChecked == 1) {
+                ids += eventsGrid.cells(id, 1).getValue() + ",";
+            }
+        });
+        if (ids == "") {
+            alert("Please select at least 1 event.");
+            return;
+        }
+        ajaxRequest('post', '/api/bulksearch/?searchId=' + searchId + '&ids=' + ids).done(function (data) {
+            alert("Save successful!");
+
+            var searchEventsGrid = $("#table_4");
+            loadGridData("/api/searchevent/?searchId=" + searchId, searchEventsGrid);
+            $('#bulksearch').modal('hide');
+        });
+        */
+    });
+
+    $("#btnSelectAll").on("click", function () {
+       // eventsGrid.setCheckedRows(0, 1);
+    });
+    
     function CreateSearchInit() {
 
         InitLoad(1);
@@ -589,7 +660,6 @@
     function ManualScrapingInit() {
 
         $("#btnScrapingStop").attr("disabled", true);
-
 
         var cboSearches = $("#cboSearches");
 
@@ -612,10 +682,11 @@
     $("#cboSearches").on("change", function () {
 
         if ($(this).val() != "") {
+
             InitLoad(1);
             ajaxRequest("get", "/api/scrapingevent/?searchId=" + $(this).val()).done(function (data) {
                 $.each(data, function (i, v) {
-                    console.log(v);
+                 
                     $("#eventlist").append("<option value='" + v["value"] + "'>" + v["text"] + "</option>")
                 });
             });
@@ -1023,8 +1094,49 @@
         }
     });
 
-    /***********************************Other ********************************************/
+    $("#table_9").on("click", "tr", function () {
+      
+        $("#update_user").modal('show');
 
+        $("#updateuserid").val($(this).find("td:nth-child(1)").html());
+        $("#updateusername").val($(this).find("td:nth-child(2)").html());
+        $("#updatepassword").val($(this).find("td:nth-child(3)").html());
+        $(this).find("td:nth-child(4)").html() == 'true' ? $("#updateisadmin").prop('checked', true) : $("#updateisadmin").prop('checked',false);
+        $("#updateapiusername").val($(this).find("td:nth-child(5)").html());
+        $("#updateapipassword").val($(this).find("td:nth-child(6)").html());
+        $("#updateenvironment").val($(this).find("td:nth-child(7)").html());
+        $("#updateconsumerkey").val($(this).find("td:nth-child(8)").html());
+        $("#updateconsumersecretkey").val($(this).find("td:nth-child(9)").html());
+        $("#updateapplicationtoken").val($(this).find("td:nth-child(10)").html());
+
+        $("#updateisadmin").prop('checked', true);
+      
+    });
+    $("#btnupdateuser").on("click", function (event) {
+        event.preventDefault();
+       
+        var userData = {
+            Id:$("#updateuserid").val(),
+            ApiUserName: $("#updateapiusername").val(),            ApiPassword: $("#updateapipassword").val(),
+
+            ApplicationToken: $("#updateapplicationtoken").val(),
+            ConsumerKey: $("#updateconsumerkey").val(),
+            ConsumerSecret: $("#updateconsumersecretkey").val(),
+            Environment: $("#updateenvironment").val(),
+            IsAdmin: $("#updateisadmin").is(':checked') ? 1 : 0,
+            Password: $("#updatepassword").val(),
+            UserName: $("#updateusername").val()
+        };
+
+        ajaxRequest("put", "/api/users/" + userData.ID, userData).done(function (data) {
+            alert("This user has been updated!");
+            $("#updateForm").modal('hide');
+        });
+
+    });
+
+    /***********************************Other ********************************************/
+  
     $("#logout").on("click", function (event) {
         event.preventDefault();
         $("#logoutForm").submit();

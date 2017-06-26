@@ -20,8 +20,8 @@
     @Scripts.Render("~/bundles/dateformat")
 
 @if (@User.Identity.IsAuthenticated)
-{ /*
-     
+{ 
+     /*
       @Styles.Render("~/bundles/dhtmlx_css")
       @Scripts.Render("~/bundles/dhtmlx")
       <input id="antiForgeryToken" type="hidden" value="@GetAntiForgeryToken()" />
@@ -80,7 +80,7 @@
          @Scripts.Render("~/bundles/metronic_js")
          @Scripts.Render("~/bundles/custom_table")
          @Scripts.Render("~/bundles/custom")
-
+   
 }
 else
 {  
