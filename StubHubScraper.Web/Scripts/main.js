@@ -1077,8 +1077,6 @@ function loadSearchManagementTab() {
                     loadGridData("/api/searchevent/?searchId=" + searchId, searchEventsGrid);
                 });
             }
-
-
         }
         if (id == "btnScanLink") {
             showBulkSearchWindow();

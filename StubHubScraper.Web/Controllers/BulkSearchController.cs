@@ -64,7 +64,11 @@ namespace StubHubScraper.Web.Controllers
             {
                 _logger.InsertLog(new Log { UserId = user.Id, LogLevelId = 40, Message = ex.Message, CreatedOnUtc = DateTime.Now });
             }
-            return Request.CreateResponse(HttpStatusCode.OK);
+            // return Request.CreateResponse(HttpStatusCode.OK);
+
+            var model = new { result = "success" };
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, model);
+            return response;
         }
         public HttpResponseMessage Post(int searchId,string ids)
         {
@@ -107,7 +111,10 @@ namespace StubHubScraper.Web.Controllers
                 _logger.InsertLog(new Log { UserId = user.Id, LogLevelId = 40, Message = ex.Message, CreatedOnUtc = DateTime.Now });
                 return Request.CreateResponse(HttpStatusCode.InternalServerError);
             }
-            return Request.CreateResponse(HttpStatusCode.OK);
+            //  return Request.CreateResponse(HttpStatusCode.OK);
+            var model = new { result = "success" };
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, model);
+            return response;
         }
         public HttpResponseMessage Delete(int id)
         {
@@ -125,7 +132,10 @@ namespace StubHubScraper.Web.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError);
             }
 
-            return Request.CreateResponse(HttpStatusCode.OK);
+            //  return Request.CreateResponse(HttpStatusCode.OK);
+            var model = new { result = "success" };
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, model);
+            return response;
         }
 
     }

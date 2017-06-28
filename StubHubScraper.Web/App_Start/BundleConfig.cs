@@ -70,7 +70,7 @@ namespace StubHubScraper.Web
                 "~/Content/assets/global/plugins/datatables/datatables.min.css",
                 "~/Content/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css",
 
-               
+                "~/Content/assets/global/dist/ladda-themeless.min.css",
                 "~/Content/assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css",
                 "~/Content/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css",
                
@@ -94,7 +94,11 @@ namespace StubHubScraper.Web
                    "~/Content/assets/global/scripts/datatable.js",
                    "~/Content/assets/global/plugins/datatables/datatables.min.js",
                    "~/Content/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js",
+                   
+                   "~/Content/assets/global/dist/spin.min.js",
+                   "~/Content/assets/global/dist/ladda.min.js",
 
+                   "~/Content/assets/global/plugins/bootbox/bootbox.min.js",
                    "~/Content/assets/global/plugins/bootstrap-daterangepicker/moment.min.js",
                    "~/Content/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js",
                    "~/Content/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js",

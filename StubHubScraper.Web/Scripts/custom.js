@@ -29,7 +29,7 @@
                // if (err.message == undefined)
                //      alert("undefined error");
                // else
-                    alert("xhr:"+JSON.stringify(xhr)+" status:"+status+" error:"+error);
+                bootbox.alert(error);
 
             }
         };
@@ -47,7 +47,7 @@
 
     function failCallback(elem) {
 
-        alert("Connetion error");
+        bootbox.alert("Connetion error");
 
     }
 
@@ -89,6 +89,8 @@
             grid.DataTable().clear();
             grid.DataTable().draw();
 
+            console.log(url);
+            console.log(JSON.stringify(data));
             $.each(data, function (i, v) {
 
                 var row = [];
@@ -104,7 +106,7 @@
 
         }).fail(function () {
 
-            alert("Error when loading data!");
+            bootbox.alert("Error when loading data!");
 
         });
     }
@@ -420,7 +422,7 @@
     $("#table_3 tbody").on("click", "tr", function () {
 
         var searchId = $(this).find("td:first-child").html();
-        selected_tableId = searchId;
+        selected_tableGridId = searchId;
         selected_tableEventGridId = null;
 
         var grid = $("#table_4");
@@ -445,23 +447,23 @@
     $("#btnReload").on("click", function () {
         InitLoad(1);
         loadSearches();
-        selected_tableId = null;
+        selected_tableGridId = null;
 
     });
 
     $("#btnDeleteSelectedSearches").on("click", function () {
 
-        if (selected_tableId != null) {
+        if (selected_tableGridId != null) {
             InitLoad(2);
-            ajaxRequest("delete", 'api/search/' + selected_tableId).done(function (data) {
+            ajaxRequest("delete", 'api/search/' + selected_tableGridId).done(function (data) {
 
-                alert("The searchItem has been deleted!");
-                selected_tableId = null;
+                bootbox.alert("The searchItem has been deleted!");
+                selected_tableGridId = null;
                 loadSearches();
             });
         }
         else
-            alert("Please select a SearchItem!");
+            bootbox.alert("Please select a SearchItem!");
     });
 
     $("#btnDeleteSearchEvent").on("click", function () {
@@ -470,19 +472,19 @@
             InitLoad(2);
             ajaxRequest("delete", 'api/searchevent/' + selected_tableEventGridId).done(function (data) {
 
-                alert("The SearchEvent has been delete!");
+                bootbox.alert("The SearchEvent has been delete!");
 
                 var grid = $("#table_4");
                 var columnData = ["Id", "EventId", "EventTitle", "EventVenue", "EventDate", "Active"];
 
-                loadGridData("/api/searchevent/?searchId=" + searchId, grid, columnData);
+                loadGridData("/api/searchevent/?searchId=" + selected_tableGridId, grid, columnData);
 
                 selected_tableEventGridId = null;
 
             });
         }
         else {
-            alert("Please select a event.");
+            bootbox.alert("Please select a event.");
         }
     });
 
@@ -491,21 +493,21 @@
         var eventId = Number($("#txtEventId").val());
 
         if (eventId == 0 || isNaN(eventId)) {
-            alert("Invalid eventId");
+            bootbox.alert("Invalid eventId");
         }
         else {
 
-            var sTemp = { EventId: eventId, SearchId: searchId };
+            var sTemp = { EventId: eventId, SearchId: selected_tableGridId };
 
             InitLoad(2);
             ajaxRequest('post', '/api/searchevent/', sTemp).done(function (data) {
 
-                alert("The event has been saved!");
+                bootbox.alert("The event has been saved!");
 
                 var grid = $("#table_4");
                 var columnData = ["Id", "EventId", "EventTitle", "EventVenue", "EventDate", "Active"];
 
-                loadGridData("/api/searchevent/?searchId=" + searchId, grid, columnData);
+                loadGridData("/api/searchevent/?searchId=" + selected_tableGridId, grid, columnData);
 
             });
         }
@@ -525,13 +527,16 @@
             ScanDayBefore: $("#ScanDayBefore").val(),
             Id: selected_tableGridId
         };
-        InitLoad(2);
-        ajaxRequest('post', '/api/search/', sData).done(function (data) {
+        console.log(sData);
+       InitLoad(2);
 
-            alert("The search has been saved!");
+      ajaxRequest('post', '/api/search/', sData).done(function (data) {
+
+          bootbox.alert("The search has been saved!");
             loadSearches();
 
         });
+        
     });
 
     $("#btnEditSearch").on("click", function () {
@@ -544,7 +549,7 @@
         };
         InitLoad(2);
         ajaxRequest('put', '/api/search/' + selected_tableGridId, sData).done(function (data) {
-            alert("The search has been saved!");
+            bootbox.alert("The search has been saved!");
             loadSearches();
 
         });
@@ -558,15 +563,16 @@
             ScanDayBefore: $("#ScanDayBefore").val(),
             Id: selected_tableGridId
         };
+
         InitLoad(2);
         ajaxRequest("delete", 'api/searchevent/0').done(function (data) {
 
-            alert("The SearchEvent has been empty!");
+            bootbox.alert("The SearchEvent has been empty!");
 
             var grid = $("#table_4");
             var columnData = ["Id", "EventId", "EventTitle", "EventVenue", "EventDate", "Active"];
-
-            loadGridData("/api/searchevent/?searchId=" + searchId, grid, columnData);
+           
+            loadGridData("/api/searchevent/?searchId=" + selected_tableGridId, grid, columnData);
 
             $("#Name").val("");
             $("#Schedule").val("");
@@ -576,23 +582,27 @@
     });
 
     $("#btnSearchEvent").on("click", function () {
+
         var eventTitle = $("#txtEventTitle").val();
         var venue = $("#txtVenue").val();
 
-        InitLoad(3);
+        InitLoad(2);
+
         ajaxRequest("delete", 'api/bulksearch/0').done(function (data) {
 
             var eventsGrid = $("#bulkeventtable");
             var columnData = ["Scanned", "EventId", "EventTitle", "EventVenue", "EventDate"];
 
             var id_of_setinterval = setInterval(function () {
-                loadGridData("/api/bulksearch", eventsGrid,columnData);
+                loadGridData("/api/bulksearch", eventsGrid, columnData);
+                RequestNum +=1;
             }, 10000);
 
             $.ajax({
                 url: "/api/bulksearch?title=" + eventTitle + "&venue=" + venue,
                 type: "GET",
                 success: function (data, textStatus, jqXHR) {
+
                     loadGridData("/api/bulksearch", eventsGrid, columnData);
                    
                     alert("Search complete!");
@@ -620,32 +630,27 @@
     $("#btnSearchSave").on("click", function () {
         var searchId = selected_tableId;
         var ids = "";
-
-        /*
-        eventsGrid.forEachRow(function (id) {
-
-            var isChecked = eventsGrid.cells(id, 0).getValue();
-
-            if (isChecked == 1) {
-                ids += eventsGrid.cells(id, 1).getValue() + ",";
-            }
+        var eventsGrid = $("#bulkeventtable");
+      
+        $.map(eventsGrid.DataTable().rows('.selected').data(), function (item) {
+            ids += item[1] + ",";
         });
+            
         if (ids == "") {
-            alert("Please select at least 1 event.");
+            bootbox.alert("Please select at least 1 event.");
             return;
         }
+
         ajaxRequest('post', '/api/bulksearch/?searchId=' + searchId + '&ids=' + ids).done(function (data) {
-            alert("Save successful!");
+            bootbox.alert("Save successful!");
 
             var searchEventsGrid = $("#table_4");
-            loadGridData("/api/searchevent/?searchId=" + searchId, searchEventsGrid);
+            var columnData = ["Id", "EventId", "EventTitle", "EventVenue", "EventDate", "Active"];
+            loadGridData("/api/searchevent/?searchId=" + searchId, searchEventsGrid, columnData);
             $('#bulksearch').modal('hide');
         });
-        */
-    });
+        
 
-    $("#btnSelectAll").on("click", function () {
-       // eventsGrid.setCheckedRows(0, 1);
     });
     
     function CreateSearchInit() {
@@ -702,18 +707,20 @@
 
         $("#btnScrapingStop").attr("disabled", false);
 
-        if (eventIds != "") {
+        if (eventIds != null) {
 
-            console.log(eventIds);
+            var l = Ladda.create(this);
+            l.start();
           
             ajaxRequest("get", "/api/scrapingevent/?ids=" + eventIds).done(function (data) {
 
-                alert("Searching complete");
+                bootbox.alert("Searching complete");
+                l.stop();
             });
         }
         else {
 
-            alert("Please select at least 1 event.");
+            bootbox.alert("Please select at least 1 event.");
         }
     });
 
@@ -730,7 +737,7 @@
 
         eventIds = $("#eventlist").val();
 
-        if (eventIds != "")
+        if (eventIds != null)
             window.location = "ExportToCSV/ScrapingEventsToCSV?ids=" + eventIds;
 
     });
@@ -739,17 +746,20 @@
 
         var searchIds = $("#multiSearches").val();
 
-        if (searchIds != "") {
+        if (searchIds != null) {
 
-            //   InitLoad(1);
+            var l = Ladda.create(this);
+            l.start();
+
             ajaxRequest("get", "/api/scrapingmultisearches/?ids=" + searchIds).done(function (data) {
 
-                alert("Searching complete");
+                bootbox.alert("Searching complete");
+                l.stop();
             });
         }
         else {
 
-            alert("Please select at least 1 searchItem");
+            bootbox.alert("Please select at least 1 searchItem");
         }
         $("#btnScrapingStop_2").attr("disabled", false);
 
@@ -766,7 +776,7 @@
 
         var searchIds = $("#multiSearches").val();
 
-        if (searchIds != "")
+        if (searchIds != null)
             window.location = "ExportToCSV/ScrapingMultiSearchesToCSV?ids=" + searchIds;
 
     });
@@ -868,18 +878,22 @@
         var zone = $("#Zone").val();
         var sectionForm = $("#SectionForm").val();
         var sectionTo = $("#SectionTo").val();
-        var lastWeekSalesOnly = $("#LastWeekSalesOnly").val();
-        var hidePastEvents = $("#HidePastEvents").val();
-        var showArchivedSearches = $("#ShowArchivedSearches").val();
+        var lastWeekSalesOnly = $("#LastWeekSalesOnly").is(":checked")? 1 : 0;
+        var hidePastEvents = $("#HidePastEvents").is(":checked") ? 1 : 0;
+        var showArchivedSearches = $("#ShowArchivedSearches").is(":checked") ? 1 : 0;
 
-        if (searchId == "")
+        if (searchId == null)
             searchId = 0;
-        if (eventId == "")
+        if (eventId == null)
             eventId = 0;
+        if (startDate == "")
+            startDate = null;
+        if (endDate == "")
+            endDate = null;
 
         var sdBtab1Grid = $("#table_5");
         var sdBtab2Grid = $("#table_6");
-        var columnData1 = ["Id", "Title", "Venue", "Date", "Sales", "TicketsCount", " AvgPrice"];
+        var columnData1 = ["Id", "Title", "Venue", "Date", "Sales", "TicketsCount", "AvgPrice"];
         var columnData2 = ["Id", "EventId", "EventTitle", "EventVenue", "EventDate", "Zone", "Section", "Row", "Price", "Qty", "DateSold"];
 
         InitLoad(3);
@@ -902,7 +916,7 @@
                 TicketDrawChart(data);
 
             });
-
+       
     });
 
     $("#btnExportTicketsToCSV").on("click", function () {
@@ -911,9 +925,7 @@
 
         sdBtab1Grid = $("#table_5");
 
-        sdBtab1Grid.column(0)
-                   .data()
-                   .each(function (value, index) {
+        sdBtab1Grid.DataTable().column(0).data().each(function (value, index) {
 
                        ids += value + ",";
 
@@ -937,7 +949,7 @@
             InitLoad(2);
             ajaxRequest("delete", 'api/lookuptickets/' + selected_TicketId).done(function (data) {
 
-                alert("The ticket has been deleted!");
+                bootbox.alert("The ticket has been deleted!");
 
                 var searchId = $("#SearchId").val();
                 var eventId = $("#EventId").val();
@@ -948,13 +960,18 @@
                 var zone = $("#Zone").val();
                 var sectionForm = $("#SectionForm").val();
                 var sectionTo = $("#SectionTo").val();
-                var lastWeekSalesOnly = $("#LastWeekSalesOnly").val();
-                var hidePastEvents = $("#HidePastEvents").val();
-                var showArchivedSearches = $("#ShowArchivedSearches").val();
-                if (searchId == "")
+                var lastWeekSalesOnly = $("#LastWeekSalesOnly").is(":checked") ? 1 : 0;
+                var hidePastEvents = $("#HidePastEvents").is(":checked") ? 1 : 0;
+                var showArchivedSearches = $("#ShowArchivedSearches").is(":checked") ? 1 : 0;
+                if (searchId == null)
                     searchId = 0;
-                if (eventId == "")
+                if (eventId == null)
                     eventId = 0;
+                if (startDate == "")
+                    startDate = null;
+                if (endDate == "")
+                    endDate = null;
+
 
                 sdBtab2Grid = $("#table_6");
                 var columnData2 = ["Id", "EventId", "EventTitle", "EventVenue", "EventDate", "Zone", "Section", "Row", "Price", "Qty", "DateSold"];
@@ -969,7 +986,7 @@
             });
         }
         else
-            alert("Please select a ticket!");
+            bootbox.alert("Please select a ticket!");
 
     });
 
@@ -1086,7 +1103,7 @@
                 UserName: $("#username").val()
             };
             ajaxRequest('post', '/api/users/', userData).done(function (data) {
-                alert("The user has been saved!");
+                bootbox.alert("The user has been saved!");
                 loadUsers();
                 $('#new_user').modal('hide');
             });
@@ -1101,38 +1118,39 @@
         $("#updateuserid").val($(this).find("td:nth-child(1)").html());
         $("#updateusername").val($(this).find("td:nth-child(2)").html());
         $("#updatepassword").val($(this).find("td:nth-child(3)").html());
-        $(this).find("td:nth-child(4)").html() == 'true' ? $("#updateisadmin").prop('checked', true) : $("#updateisadmin").prop('checked',false);
+        $(this).find("td:nth-child(4)").html() == 'true' ? $("#updateisadmin").parent().addClass('checked') : $("#updateisadmin").parent().removeClass('checked');
         $("#updateapiusername").val($(this).find("td:nth-child(5)").html());
         $("#updateapipassword").val($(this).find("td:nth-child(6)").html());
         $("#updateenvironment").val($(this).find("td:nth-child(7)").html());
         $("#updateconsumerkey").val($(this).find("td:nth-child(8)").html());
         $("#updateconsumersecretkey").val($(this).find("td:nth-child(9)").html());
         $("#updateapplicationtoken").val($(this).find("td:nth-child(10)").html());
-
-        $("#updateisadmin").prop('checked', true);
       
     });
+
     $("#btnupdateuser").on("click", function (event) {
         event.preventDefault();
        
         var userData = {
             Id:$("#updateuserid").val(),
-            ApiUserName: $("#updateapiusername").val(),            ApiPassword: $("#updateapipassword").val(),
+            ApiUserName: $("#updateapiusername").val(),
+            ApiPassword: $("#updateapipassword").val(),
 
             ApplicationToken: $("#updateapplicationtoken").val(),
             ConsumerKey: $("#updateconsumerkey").val(),
             ConsumerSecret: $("#updateconsumersecretkey").val(),
             Environment: $("#updateenvironment").val(),
-            IsAdmin: $("#updateisadmin").is(':checked') ? 1 : 0,
+            IsAdmin: $("#updateisadmin").parent().hasClass('checked') ? "true" : "false",
             Password: $("#updatepassword").val(),
             UserName: $("#updateusername").val()
         };
-
-        ajaxRequest("put", "/api/users/" + userData.ID, userData).done(function (data) {
-            alert("This user has been updated!");
-            $("#updateForm").modal('hide');
+        
+       ajaxRequest("put", "/api/users/" + userData.Id, userData).done(function (data) {
+           bootbox.alert("This user has been updated!");
+            $("#update_user").modal('hide');
+            loadUsers();
         });
-
+        
     });
 
     /***********************************Other ********************************************/

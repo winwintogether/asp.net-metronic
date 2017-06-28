@@ -85,7 +85,10 @@ namespace StubHubScraper.Web.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError);
             }
 
-            return Request.CreateResponse(HttpStatusCode.OK);
+            // return Request.CreateResponse(HttpStatusCode.OK);
+            var model = new { result = "success" };
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, model);
+            return response;
         }
 
     }

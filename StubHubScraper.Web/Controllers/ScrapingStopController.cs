@@ -32,7 +32,10 @@ namespace StubHubScraper.Web.Controllers
             var user = _authenticationService.GetAuthenticatedUser();
             user.IsScrapingStop = true;
             _userService.UpdateUser(user);
-            return Request.CreateResponse(HttpStatusCode.OK);
+            // return Request.CreateResponse(HttpStatusCode.OK);
+            var model = new { result = "success" };
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, model);
+            return response;
         }
     }
 

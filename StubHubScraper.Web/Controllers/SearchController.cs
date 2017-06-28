@@ -114,7 +114,10 @@ namespace StubHubScraper.Web.Controllers
                 search.Archived = archived == 1 ? true : false;
                 _searchManagementService.UpdateSearch(search);
             }
-            return Request.CreateResponse(HttpStatusCode.OK);
+            // return Request.CreateResponse(HttpStatusCode.OK);
+            var responsemodel = new { result = "success" };
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, responsemodel);
+            return response;
         }
         public HttpResponseMessage Post(Search model)
         {
