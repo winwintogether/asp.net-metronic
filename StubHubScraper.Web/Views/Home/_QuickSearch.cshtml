@@ -117,11 +117,11 @@
            
             <div class="row">
                 <div class="col-md-6">
-                    <div class="portlet light bordered">
+                    <div class="portlet box green">
                         <div class="portlet-title">
                             <div class="caption">
-                                <i class="fa fa-cogs font-green-sharp"></i>
-                                <span class="caption-subject font-green-sharp bold uppercase">Quick Search</span>
+                                <i class="fa fa-cogs font-white-sharp"></i>
+                                <span class="caption-subject font-white-sharp">Quick Search</span>
                             </div>
 
                         </div>
@@ -203,12 +203,12 @@
                                         <div class="row">
                                             <div class="form-group">
                                                 <div class="col-md-12">
-                                                    <button id="getZones" type="button" class="btn btn-primary">Get Zones</button>
+                                                    <button id="getZones" type="button" class="btn green">Get Zones</button>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-md-12">
-                                                    <select multiple="multiple" class="multi-select" id="PickZones" name="" style="width:100%;height: 150px">
+                                                    <select multiple="multiple" class="multi-select" id="PickZones" name="" style="width:90%;height: 150px">
                                                         
                                                     </select>
                                                 </div>
@@ -226,11 +226,11 @@
                                             <div class="form-group">
                                                 <div class="col-md-2"></div>
                                                 <div class="col-md-4">
-                                                    <button id="btnQuickSearch" type="button" class="btn btn-primary">Quick Search</button>
+                                                    <button id="btnQuickSearch" type="button" class="btn green">Quick Search</button>
                                                 </div>
 
                                                 <div class="col-md-4">
-                                                    <button id="btnExportToCSV" type="button" class="btn btn-primary">Export CSV</button>
+                                                    <button id="btnExportToCSV" type="button" class="btn green">Export CSV</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -243,7 +243,7 @@
                 </div>
                 
                 <div class="col-md-6">
-                    <div class="portlet light ">
+                    <!--<div class="portlet light ">
                         <div class="portlet-title">
                             <div class="caption">
                                 <i class="icon-bar-chart font-green-haze"></i>
@@ -262,14 +262,64 @@
                             <div id="chart_1" class="chart" style="height: 400px;"> </div>
                         </div>
                     </div>
+                    -->
+                    <div class="portlet box green">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-gift font-white-sharp"></i>
+                                <span class="caption-subject font-white-sharp">Chart Result</span>
+                            </div>
+                            <ul class="nav nav-tabs">
+                               
+                                <li class="active">
+                                    <a href="#portlet_tab1" data-toggle="tab"> Volume </a>
+                                </li>
+                               
+                                <li>
+                                    <a href="#portlet_tab2" data-toggle="tab"> Moving-Average </a>
+                                </li>
+
+                                <li>
+                                    <a href="#portlet_tab3" data-toggle="tab"> Available-Tickets </a>
+                                </li>
+
+                                <li>
+                                    <a href="#portlet_tab4" data-toggle="tab"> Sold-Tickets </a>
+                                </li>
+
+                                <li>
+                                    <a href="#portlet_tab5" data-toggle="tab"> Cheapest-Tickets </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="portlet-body" style="height: 400px">
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="portlet_tab1">
+                                    <div id="volume_chart" class="chart" style="height: 350px;"> </div>
+                                </div>
+                                <div class="tab-pane" id="portlet_tab2">
+                                    <div id="average_chart" class="chart" style="height: 350px;"> </div>
+                                </div>
+                                <div class="tab-pane" id="portlet_tab3">
+                                    <div id="available_chart" class="chart" style="height: 350px;"> </div>
+                                </div>
+                                <div class="tab-pane" id="portlet_tab4">
+                                    <div id="sold_chart" class="chart" style="height: 350px;"> </div>
+                                </div>
+                                <div class="tab-pane" id="portlet_tab5">
+                                    <div id="cheapest_chart" class="chart" style="height: 350px;"> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-12">
                     <!-- BEGIN EXAMPLE TABLE PORTLET-->
-                    <div class="portlet light ">
+                    <div class="portlet box green ">
                         <div class="portlet-title">
-                            <div class="caption font-dark">
+                            <div class="caption font-white-sharp">
                                 <span>
-                                    TABLE RESULTS
+                                    Table Results
                                 </span>
                             </div>
 

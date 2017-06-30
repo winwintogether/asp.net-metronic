@@ -42,8 +42,6 @@ namespace StubHubScraper.Services
             browser.Proxy = proxy;
         }
 
-
-
         private static string Base64Encode(string plainText)
         {
             var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
@@ -114,7 +112,8 @@ namespace StubHubScraper.Services
             #endregion
 
             List<string> results = new List<string>();
-
+            List<string> ExtraTicketInfo = new List<string>();
+                
             RestClient restClient = new RestClient("https://api.stubhub.com");
             if (proxy != null) restClient.Proxy = proxy;
 
@@ -134,6 +133,7 @@ namespace StubHubScraper.Services
 
             return results;
         }
+       
 
         public static bool ScrapeEventMainInfo(Event eventItem, string token)
         {

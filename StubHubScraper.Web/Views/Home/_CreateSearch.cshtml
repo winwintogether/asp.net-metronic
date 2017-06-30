@@ -116,9 +116,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <!-- BEGIN EXAMPLE TABLE PORTLET-->
-                    <div class="portlet light ">
+                    <div class="portlet box green ">
                         <div class="portlet-title">
-                            <div class="caption font-dark">
+                            <div class="caption font-white-sharp">
                                 <span>
                                     Archived Searches
                                 </span>
@@ -155,8 +155,8 @@
                               <div class="col-md-4">
                                     <form class="form-horizontal">
                                         <div class="row" style="height:100px;">
-                                            <button id="btnReload" type="button" class="btn btn-primary">Reload</button> 
-                                            <button id="btnDeleteSelectedSearches" type="button" class="btn btn-primary">Delete Selected Searches</button> 
+                                            <button id="btnReload" type="button" class="btn green">Reload</button> 
+                                            <button id="btnDeleteSelectedSearches" type="button" class="btn green">Delete Selected Searches</button> 
                                         </div>
                                      </form>
                                </div>
@@ -167,9 +167,9 @@
                 </div>
 
                 <div class="col-md-12">
-                   <div class="portlet light ">
+                   <div class="portlet box green">
                         <div class="portlet-title">
-                            <div class="caption font-dark">
+                            <div class="caption font-white-sharp">
                                 <span>
                                     Details
                                 </span>
@@ -181,16 +181,16 @@
                                <div class="col-md-8">
                                    <h4>Search Events</h4>
                                    <div class="row">
-                                       <div class="col-md-1"><button id="btnDeleteSearchEvent" type="button" class="btn btn-primary">Delete</button></div>
+                                       <div class="col-md-1"><button id="btnDeleteSearchEvent" type="button" class="btn green">Delete</button></div>
                                        <div class="col-md-3">
                                            <div class="input-group input-medium">
                                                <input id="txtEventId" type="text" class="form-control">
                                                <span class="input-group-btn">
-                                                   <button  type="button" id="btnAddSearchEvent" class="btn blue">Add</button>
+                                                   <button  type="button" id="btnAddSearchEvent" class="btn green">Add</button>
                                                </span>
                                            </div>
                                         </div>
-                                       <div class="col-md-2"><button id="btnScanLink" type="button" class="btn btn-primary" data-toggle="modal" href="#bulksearch">Search Events</button></div>
+                                       <div class="col-md-2"><button id="btnScanLink" type="button" class="btn green" data-toggle="modal" href="#bulksearch">Search Events</button></div>
                                    </div>
                                    <div class="row">
                                        <div class="col-md-12">
@@ -241,11 +241,11 @@
                                        </div>
                                        <div class="col-md-6" style="text-align: left">
                                            <br>
-                                           <button id="btnAddSearch" type="button"  style="display:block" class="btn btn-primary">Add Search</button>
+                                           <button id="btnAddSearch" type="button"  style="display:block" class="btn green">Add Search</button>
                                            <br>
-                                           <button id="btnEditSearch" type="button"  style="display:block" class="btn btn-primary">Edit Search</button>
+                                           <button id="btnEditSearch" type="button"  style="display:block" class="btn green">Edit Search</button>
                                            <br>
-                                           <button id="btnClearSearchTemp" type="button" style="display:block" class="btn btn-primary">Clear Search</button>
+                                           <button id="btnClearSearchTemp" type="button" style="display:block" class="btn green">Clear Search</button>
                                        </div>
                                    </div>
                                </div>
@@ -257,9 +257,9 @@
                 <div class="modal fade" id="bulksearch" tabindex="-1" role="basic" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
-                            <div class="modal-header">
+                            <div class="modal-header" style="background:#5cd1db">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                                <h4 class="modal-title">Bulk Search</h4>
+                                <h4 class="modal-title" style="color:white">Bulk Search</h4>
                             </div>
                             <div class="modal-body">
                                 <form action="#" id="newForm" name="newForm" class="form-horizontal">
@@ -278,7 +278,7 @@
                                                         <input id="txtVenue" type="text" class="form-control" name="UserName" required />
                                                 </div>
                                                 <div class="col-md-2">
-                                                    <button id="btnSearchEvent" type="button" class="btn dark btn-outline">Search</button>
+                                                    <button id="btnSearchEvent" type="button" class="btn green">Search</button>
                                                 </div>
                                             </div>
                                       </div>  
@@ -300,9 +300,9 @@
                                 </div>        
                             </div>
                             <div class="modal-footer">
-                                <button id="btnSelectAll" type="button" class="btn green btn-outline">Select All</button>
-                                <button id="btnSearchSave" type="button" class="btn green btn-outline">Save</button>
-                                <button id="btnSearchCancel" type="button" class="btn green btn-outline" data-dismiss="modal">Cancel</button>
+                                <button id="btnSelectAll" type="button" class="btn green">Select All</button>
+                                <button id="btnSearchSave" type="button" class="btn green">Save</button>
+                                <button id="btnSearchCancel" type="button" class="btn green" data-dismiss="modal">Cancel</button>
                             </div>
                         </div>
                         <!-- /.modal-content -->

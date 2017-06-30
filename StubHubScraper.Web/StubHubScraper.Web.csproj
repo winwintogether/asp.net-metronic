@@ -233,6 +233,7 @@
     <Compile Include="Infrastructure\DependencyResolver.cs" />
     <Compile Include="MappingExtensions.cs" />
     <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\UpdateChartModel.cs" />
     <Compile Include="Models\QuickSearchModel.cs" />
     <Compile Include="Models\SearchModel.cs" />
     <Compile Include="Models\UserModels.cs" />

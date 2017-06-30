@@ -134,9 +134,9 @@
 
     function QuickDrawChart(chartData) {
 
-        var chart = AmCharts.makeChart(
+        var volume = AmCharts.makeChart(
 
-            "chart_1",
+            "volume_chart",
            {
                "type": "serial",
                "theme": "light",
@@ -159,16 +159,6 @@
                    "type": "column",
                    "valueField": "volume",
                    "valueAxis": "volumeAxis"
-               }, {
-                   "bullet": "square",
-                   "bulletBorderAlpha": 1,
-                   "bulletBorderThickness": 1,
-                   "dashLengthField": "dashLength",
-                   "legendValueText": "[[value]]",
-                   "title": "Moving Average",
-                   "fillAlphas": 0,
-                   "valueField": "average",
-                   "valueAxis": "averageAxis"
                }],
                "chartCursor": {
                    "categoryBalloonDateFormat": "DD",
@@ -189,11 +179,50 @@
                }
            });
 
-        $('#chart_1').closest('.portlet').find('.fullscreen').click(function () {
+        var average = AmCharts.makeChart(
 
-            chart.invalidateSize();
-
-        });
+                   "average_chart",
+                  {
+                      "type": "serial",
+                      "theme": "light",
+                      "fontFamily": 'Open Sans',
+                      "color": '#888888',
+                      "legend": {
+                          "equalWidths": false,
+                          "useGraphSettings": true,
+                          "valueAlign": "left",
+                          "valueWidth": 120
+                      },
+                      "dataProvider": chartData,
+                      "graphs": [{
+                           "bullet": "square",
+                           "bulletBorderAlpha": 1,
+                           "bulletBorderThickness": 1,
+                           "dashLengthField": "dashLength",
+                           "legendValueText": "[[value]]",
+                           "title": "Moving Average",
+                           "fillAlphas": 0,
+                           "valueField": "average",
+                           "valueAxis": "averageAxis"
+                       }],
+                      "chartCursor": {
+                          "categoryBalloonDateFormat": "DD",
+                          "cursorAlpha": 0.1,
+                          "cursorColor": "#000000",
+                          "fullWidth": true,
+                          "valueBalloonsEnabled": false,
+                          "zoomable": false
+                      },
+                      "categoryField": "date",
+                      "exportConfig": {
+                          "menuBottom": "20px",
+                          "menuRight": "22px",
+                          "menuItems": [{
+                              "icon": App.getGlobalPluginsPath() + "amcharts/amcharts/images/export.png",
+                              "format": 'png'
+                          }]
+                      }
+                  });
     }
 
     function QuickSearchInit() {
