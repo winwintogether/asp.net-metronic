@@ -36,6 +36,7 @@
                 style: 'single'
             },
             // setup rowreorder extension: http://datatables.net/extensions/rowreorder/
+
             rowReorder: {
 
             },

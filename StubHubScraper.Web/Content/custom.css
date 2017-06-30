@@ -1,7 +1,18 @@
 ﻿body {
 }
 .logo-default {
-    margin: 10px 0 0 !important;
+    margin-top: 10px !important;
+    margin-left: 50px !important;
+    width:45px;height:45px;
+}
+.page-top {
+    background-color:#2b3643 !important;
+}
+.page-logo {
+     background-color:#2b3643 !important;
+}
+.dropdown-toggle {
+   /* background-color:#ddd !important;*/
 }
 #table_3 tbody tr td:nth-child(1) {
     display:none;

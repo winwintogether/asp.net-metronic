@@ -18,12 +18,10 @@
             type: type,
             data: data ? JSON.stringify(data) : null,
             success: function (data) {
-
                 ResponseNum++;
                 CheckEndProcess();
             },
             error: function (xhr, status, error) {
-
                 LoadingOff();
                //var err = eval("(" + xhr.responseText + ")");
                // if (err.message == undefined)
@@ -228,8 +226,6 @@
                     $("#PickZones").append("<option value='" + v["value"] + "'>" + v["text"] + "</option>")
 
                 });
-
-
             });
         }
     });
@@ -515,8 +511,10 @@
 
     $("#btnScanLink").on("click", function () {
 
-        
-
+        $("#txtEventTitle").val("");
+        $("#txtVenue").val("");
+        $("#bulkeventtable").DataTable().clear();
+        $("#bulkeventtable").DataTable().draw();
     });
 
     $("#btnAddSearch").on("click", function () {

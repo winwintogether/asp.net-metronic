@@ -2,3 +2,4 @@ D:\metronic\WebStubhub\StubHubScraper.Core\bin\Debug\StubHubScraper.Core.dll
 D:\metronic\WebStubhub\StubHubScraper.Core\bin\Debug\StubHubScraper.Core.pdb
 D:\metronic\WebStubhub\StubHubScraper.Core\obj\Debug\StubHubScraper.Core.dll
 D:\metronic\WebStubhub\StubHubScraper.Core\obj\Debug\StubHubScraper.Core.pdb
+D:\Metronic\WebStubhub\StubHubScraper.Core\obj\Debug\StubHubScraper.Core.csprojResolveAssemblyReference.cache
