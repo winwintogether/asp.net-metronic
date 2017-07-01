@@ -351,7 +351,7 @@
             var cboQuickSearches = $("#cboQuickSearches");
             cboQuickSearches.empty();
             loadComboData(cboQuickSearches, "/api/QuickSearches/", "Name", "Id", '');
-
+            
             ajaxRequest("get", "/api/chartdata/?quickId=" + data.Id).done(function (data) {
                 QuickDrawChart(data);
             });

@@ -112,8 +112,7 @@ namespace StubHubScraper.Services
             #endregion
 
             List<string> results = new List<string>();
-            List<string> ExtraTicketInfo = new List<string>();
-                
+                  
             RestClient restClient = new RestClient("https://api.stubhub.com");
             if (proxy != null) restClient.Proxy = proxy;
 
@@ -129,8 +128,9 @@ namespace StubHubScraper.Services
                 {
                     results.Add(zone.zoneName);
                 }
+                
             }
-
+          
             return results;
         }
        
@@ -667,11 +667,13 @@ namespace StubHubScraper.Services
 
         class StubhubSearchInventoryResponse
         {
-            public int eventId { get; set; }
+           public int eventId { get; set; }
+       //     public int totalTickets { get; set; }
             public List<StubhubZoneStats> zone_stats { get; set; }
             public List<StubhubZoneStats> zoneStats { get; set; }
             public List<StubhubSectionStats> section_stats { get; set; }
             public List<StubhubSectionStats> sectionStats { get; set; }
+      //      public StubhubEventPricingSummary eventPricingSummary { get; set; }
         }
 
         class StubhubZoneStats
@@ -680,6 +682,11 @@ namespace StubHubScraper.Services
             public string zoneName { get; set; }
         }
 
+        class StubhubEventPricingSummary
+        {
+            public decimal minTicketPrice { get; set; }
+          
+        }
         class StubhubSectionStats
         {
             public int sectionId { get; set; }
@@ -695,6 +702,7 @@ namespace StubHubScraper.Services
             public string z { get; set; }
             public string zi { get; set; }
         }
+      
     }
 
 }
